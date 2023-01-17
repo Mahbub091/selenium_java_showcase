@@ -1,0 +1,12 @@
+/target/
+/test-output/
+/test-result/
+/.classpath
+/*.project
+*.log
+/.settings
+/bin/
+.DS_Store
+.idea
+.vscode
+.iml
