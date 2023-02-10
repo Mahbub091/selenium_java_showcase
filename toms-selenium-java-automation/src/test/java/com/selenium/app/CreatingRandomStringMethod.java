@@ -25,4 +25,5 @@ public class CreatingRandomStringMethod {
         int n = 13;
         System.out.println(getAlphaNumericString(n));
     }
+    
 }
