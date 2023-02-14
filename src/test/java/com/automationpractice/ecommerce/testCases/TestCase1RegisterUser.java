@@ -1,12 +1,12 @@
 package com.automationpractice.ecommerce.testCases;
 
 
+import com.automationpractice.ecommerce.pages.SkillTestPage;
 import com.automationpractice.ecommerce.pages.TestCase1RegisterUserPage;
 import com.automationpractice.ecommerce.utilities.Data;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -16,19 +16,19 @@ public class TestCase1RegisterUser extends BaseClass {
     public void testCase1RegisterUser(){
 
         TestCase1RegisterUserPage  tc1rup =new TestCase1RegisterUserPage(driver);
+        SkillTestPage skillTestPage = new SkillTestPage(driver);
 
-        //TC-4 Click on 'Signup / Login' button
+        skillTestPage.visit("https://www.automationexercise.com/");
+        sleepTest(1000);
+
         tc1rup.getSignInButton().click();
         System.out.println("Sign in Button Clicked");
 
-        //TC-5  Login URL Validation / Verify that home page is visible successfully
         String loginURL = driver.getCurrentUrl();
         System.out.println("Given "+loginURL);
         Assert.assertEquals(loginURL , Data.BASE_URL + Data.LOGIN_PAGE_URL);
         System.out.println("login URL is validate");
 
-
-        //TC-6 Verify 'New User Signup!' is visible
         if (tc1rup.getNewUserSignupText().isDisplayed())
         {
             String newUserSignupText= tc1rup.getNewUserSignupText().getText();
@@ -40,7 +40,6 @@ public class TestCase1RegisterUser extends BaseClass {
         }
         sleepTest(2000);
 
-        //TC -7 Enter name and email address
         if (tc1rup.getNameInputFieldInSignUpForm().isDisplayed())
         {
           tc1rup.getNameInputFieldInSignUpForm().sendKeys(Data.DEMO_USER_NAME);
@@ -59,8 +58,6 @@ public class TestCase1RegisterUser extends BaseClass {
         }
         sleepTest(2000);
 
-        //7. Click 'Signup' button
-
         if(tc1rup.getSignupButton().isDisplayed()){
             String signupButtonText= tc1rup.getSignupButton().getText();
             Assert.assertEquals(Data.SIGNUP_BUTTON_TEXT,signupButtonText);
@@ -72,7 +69,6 @@ public class TestCase1RegisterUser extends BaseClass {
         }
         sleepTest(2000);
 
-        //TC - 8. Verify that 'ENTER ACCOUNT INFORMATION' is visible
         if (tc1rup.getEnterAccountInformation().isDisplayed())
         {
             String enterAccountInformationText= tc1rup.getEnterAccountInformation().getText();
@@ -84,7 +80,6 @@ public class TestCase1RegisterUser extends BaseClass {
         }
         sleepTest(2000);
 
-        //Title Mr Mrs radio button validation
         WebElement mr= driver.findElement(By.cssSelector("div:nth-of-type(1) > .top > .radio  input[name='title']"));
         WebElement mrs= driver.findElement(By.cssSelector("div:nth-of-type(2) > .top > .radio  input[name='title']"));
         if(mr.isDisplayed()){
@@ -105,7 +100,6 @@ public class TestCase1RegisterUser extends BaseClass {
         }
         sleepTest(2000);
 
-        //TC - 8. Verify that 'Password Input Field' is visible
         if (tc1rup.getPasswordInputField().isDisplayed())
         {
             tc1rup.getPasswordInputField().sendKeys(Data.DEMO_PASSWORD);
@@ -118,8 +112,6 @@ public class TestCase1RegisterUser extends BaseClass {
 
         JavascriptExecutor js = (JavascriptExecutor)driver;
         js.executeScript("window.scrollBy(0,500)");
-
-        //TC - 9. Fill details: Title, Name, Email, Password, Date of birth
 
         By day = By.cssSelector("select#days");
         By month =By.cssSelector("select#months");
@@ -153,9 +145,6 @@ public class TestCase1RegisterUser extends BaseClass {
 
         sleepTest(2000);
 
-
-        // TC - 10 Select checkbox 'Sign up for our newsletter!'
-
         tc1rup.getNewsletterCheckbox().click();
         if(tc1rup.getNewsletterCheckbox().isSelected())
         {
@@ -166,8 +155,6 @@ public class TestCase1RegisterUser extends BaseClass {
         }
         sleepTest( 1000);
 
-        // TC - 11 Select checkbox 'Receive special offers from our partners!'
-
         tc1rup.getReceiveSpecialOfferCheckbox().click();
         if(tc1rup.getReceiveSpecialOfferCheckbox().isSelected())
         {
@@ -177,8 +164,6 @@ public class TestCase1RegisterUser extends BaseClass {
             System.out.println(Data.NEGATIVE_ERROR_MASSAGE);
         }
         sleepTest( 1000);
-
-        //TC - 12 Fill details: First name, Last name, Company, Address, Address2, Country, State, City, Zipcode, Mobile Number
 
         //First Name
         if (tc1rup.getFirstNameInputField().isDisplayed())
@@ -191,7 +176,7 @@ public class TestCase1RegisterUser extends BaseClass {
         }
         sleepTest(2000);
 
-       //Last Name
+
         if (tc1rup.getLastNameInputField().isDisplayed())
         {
             tc1rup.getLastNameInputField().sendKeys(Data.LAST_NAME);
@@ -203,7 +188,7 @@ public class TestCase1RegisterUser extends BaseClass {
         sleepTest(2000);
 
 
-        //Company Name
+
         if (tc1rup.getCompanyNameInputField().isDisplayed())
         {
             tc1rup.getCompanyNameInputField().sendKeys(Data.COMPANY);
@@ -216,7 +201,7 @@ public class TestCase1RegisterUser extends BaseClass {
 
 
 
-        //Address
+
         if (tc1rup.getAdress1InputField().isDisplayed())
         {
             tc1rup.getAdress1InputField().sendKeys(Data.ADDRESS);
@@ -228,7 +213,7 @@ public class TestCase1RegisterUser extends BaseClass {
         sleepTest(2000);
 
 
-        //Address 2
+
         if (tc1rup.getAdress2InputField().isDisplayed())
         {
             tc1rup.getAdress2InputField().sendKeys(Data.ADDRESS2);
@@ -239,8 +224,6 @@ public class TestCase1RegisterUser extends BaseClass {
         }
         sleepTest(2000);
 
-        //Country DropDown
-
         By country = By.cssSelector("select#country");
 
         tc1rup.dropDownSelect(country , "India");
@@ -250,7 +233,6 @@ public class TestCase1RegisterUser extends BaseClass {
         tc1rup.dropDownSelect(country,"Singapore");
         tc1rup.dropDownSelect(country,"United States");
 
-        // State
         if (tc1rup.getStateInputField().isDisplayed())
         {
             tc1rup.getStateInputField().sendKeys(Data.STATE);
@@ -261,7 +243,6 @@ public class TestCase1RegisterUser extends BaseClass {
         }
         sleepTest(2000);
 
-        // City
         if (tc1rup.getCityInputField().isDisplayed())
         {
             tc1rup.getCityInputField().sendKeys(Data.CITY);
@@ -273,7 +254,6 @@ public class TestCase1RegisterUser extends BaseClass {
         sleepTest(2000);
         js.executeScript("window.scrollBy(0,300)");
 
-        // Zipcode
         if (tc1rup.getZipCodeInputField().isDisplayed())
         {
             tc1rup.getZipCodeInputField().sendKeys(Data.ZIPCODE);
@@ -284,7 +264,6 @@ public class TestCase1RegisterUser extends BaseClass {
         }
         sleepTest(2000);
 
-        // Mobile Number
         if (tc1rup.getMobileNumberInputField().isDisplayed())
         {
             tc1rup.getMobileNumberInputField().sendKeys(Data.MOBILE_NUMBER);
@@ -295,7 +274,6 @@ public class TestCase1RegisterUser extends BaseClass {
         }
         sleepTest(2000);
 
-        //Scroll
         JavascriptExecutor js1 = (JavascriptExecutor) driver;
 
         long initialLength = (long) js1.executeScript("return document.body.scrollHeight");
@@ -313,9 +291,6 @@ public class TestCase1RegisterUser extends BaseClass {
             sleepTest(2000);
         }
 
-
-        //TC - 13  Click 'Create Account button'
-
         if(tc1rup.getCreateAccountButton().isDisplayed()){
             String createAccountButtonText= tc1rup.getCreateAccountButton().getText();
             Assert.assertEquals(Data.CREATE_BUTTON_TEXT,createAccountButtonText);
@@ -327,8 +302,6 @@ public class TestCase1RegisterUser extends BaseClass {
         }
         sleepTest(2000);
 
-
-        //TC - 14 Verify that 'ACCOUNT CREATED!' is visible
         if (tc1rup.getAccountCreatedText().isDisplayed())
         {
             String accountCreatedText= tc1rup.getAccountCreatedText().getText();
@@ -340,11 +313,8 @@ public class TestCase1RegisterUser extends BaseClass {
         }
         sleepTest(2000);
 
-        //TC - 15 Click on Continue Button
         tc1rup.getContinueButton().click();
 
-
-        //TC - 16 Verify that 'Logged in as username' is visible
         if (tc1rup.getLoggedInAsUsernameText().isDisplayed())
         {
             String loggedInAsUserText= tc1rup.getLoggedInAsUsernameText().getText();
@@ -355,9 +325,6 @@ public class TestCase1RegisterUser extends BaseClass {
             System.out.println(Data.NEGATIVE_ERROR_MASSAGE);
         }
         sleepTest(2000);
-
-
-
     }
 
 }
