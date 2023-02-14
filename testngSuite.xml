@@ -1,0 +1,14 @@
+
+<suite name = "Regression" verbose="1">
+    <test name = "UITest">
+        <classes>
+
+            <class name ="com.automationpractice.ecommerce.testCases.TestCase1RegisterUser">
+                <methods>
+                    <include name="testCase1RegisterUser" />
+                </methods>
+            </class>
+
+        </classes>
+    </test>
+</suite>

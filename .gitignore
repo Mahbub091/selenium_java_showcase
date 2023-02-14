@@ -1,0 +1,8 @@
+# /* 
+# Ignoring Unnecessary file
+# */
+
+# Ignoring Allure Result 
+allure-results/**.json
+.idea
+target

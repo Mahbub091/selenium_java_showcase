@@ -5,8 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="748cc342-f05d-4dab-b5ca-5c31ff41e97b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/selenium_java_testng_automation.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/toms-selenium-java-automation/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/toms-selenium-java-automation/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/toms-selenium-java-automation/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/toms-selenium-java-automation/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/toms-selenium-java-automation/src/main/java/com/selenium/app/App.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/toms-selenium-java-automation/src/test/java/com/selenium/app/AppTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/toms-selenium-java-automation/src/test/java/com/selenium/app/CreatingRandomStringMethod.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/toms-selenium-java-automation/src/test/java/com/selenium/app/test.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,13 +39,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/mac/Desktop/Github/selenium_java_testng_automation&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "/Users/mac/Desktop/Github/selenium_java_testng_automation"
   }
-}</component>
+}]]></component>
+  <component name="RunManager">
+    <configuration name="C:/Users/Md. Mahbubur. Rahman/Desktop/GitHub/selenium_java_testng_automation/testngSuite.xml" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="selenium_java_testng_automation" />
+      <option name="SUITE_NAME" value="$PROJECT_DIR$/testngSuite.xml" />
+      <option name="TEST_OBJECT" value="SUITE" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="TestNG.C:/Users/Md. Mahbubur. Rahman/Desktop/GitHub/selenium_java_testng_automation/testngSuite.xml" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">

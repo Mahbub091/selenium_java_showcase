@@ -1,4 +1,4 @@
-package com.selenium.app;
+package com.automationpractice.ecommerce;
 
 /**
  * Hello world!
