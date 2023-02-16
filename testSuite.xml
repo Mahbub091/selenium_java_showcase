@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Selenium E-Commerce Automation">
+    <test name = "E-commerce Demo Test">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="com.selenium.app.Tests.HomePageTest">
+                <methods>
+                    <include name="Test_01_01" />
+                    <include name="Test_01_02" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

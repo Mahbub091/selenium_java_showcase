@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="748cc342-f05d-4dab-b5ca-5c31ff41e97b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/automationpractice/ecommerce/pages/BasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/automationpractice/ecommerce/pages/BasePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/automationpractice/ecommerce/testCases/BaseClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/automationpractice/ecommerce/testCases/BaseClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/automationpractice/ecommerce/testCases/TestCase1RegisterUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/automationpractice/ecommerce/testCases/TestCase1RegisterUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testngSuite.xml" beforeDir="false" afterPath="$PROJECT_DIR$/testngSuite.xml" afterDir="false" />
-    </list>
+    <list default="true" id="9952ad5f-06b1-4b42-b93d-c919742f7167" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -24,9 +17,6 @@
       </list>
     </option>
   </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -37,26 +27,22 @@
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectId" id="2KT6B0r4rQTmQ0TRsIq8qnjaNmv" />
-  <component name="ProjectLevelVcsManager">
-    <ConfirmationsSetting value="1" id="Add" />
-  </component>
+  <component name="ProjectId" id="2Los1t2s4Ib08pkDwqDbg188t2y" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/mac/Desktop/Github/selenium_java_testng_automation&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
-}</component>
-  <component name="RunManager" selected="TestNG.C:/Users/Md. Mahbubur. Rahman/Desktop/GitHub/selenium_java_testng_automation/testngSuite.xml">
-    <configuration name="C:/Users/Md. Mahbubur. Rahman/Desktop/GitHub/selenium_java_testng_automation/testngSuite.xml" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="selenium_java_testng_automation" />
-      <option name="SUITE_NAME" value="$PROJECT_DIR$/testngSuite.xml" />
+}]]></component>
+  <component name="RunManager" selected="TestNG.C:/Users/Md. Mahbubur. Rahman/Desktop/EcommerceDemo/testSuite.xml">
+    <configuration name="C:/Users/Md. Mahbubur. Rahman/Desktop/EcommerceDemo/testSuite.xml" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="EcommerceDemo" />
+      <option name="SUITE_NAME" value="$PROJECT_DIR$/testSuite.xml" />
       <option name="TEST_OBJECT" value="SUITE" />
       <properties />
       <listeners />
@@ -64,17 +50,52 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SkillTest.skillTest" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="selenium_java_testng_automation" />
+    <configuration name="HomePageTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="EcommerceDemo" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.automationpractice.ecommerce.pages.*" />
+          <option name="PATTERN" value="com.selenium.app.Tests.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.automationpractice.ecommerce.testCases" />
-      <option name="MAIN_CLASS_NAME" value="com.automationpractice.ecommerce.testCases.SkillTest" />
-      <option name="METHOD_NAME" value="skillTest" />
+      <option name="PACKAGE_NAME" value="com.selenium.app.Tests" />
+      <option name="MAIN_CLASS_NAME" value="com.selenium.app.Tests.HomePageTest" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HomePageTest.Test_01_01" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="EcommerceDemo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.selenium.app.Tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.selenium.app.Tests" />
+      <option name="MAIN_CLASS_NAME" value="com.selenium.app.Tests.HomePageTest" />
+      <option name="METHOD_NAME" value="Test_01_01" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HomePageTest.homePageTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="EcommerceDemo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.selenium.app.Tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.selenium.app.Tests" />
+      <option name="MAIN_CLASS_NAME" value="com.selenium.app.Tests.HomePageTest" />
+      <option name="METHOD_NAME" value="homePageTest" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -84,31 +105,22 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.C:/Users/Md. Mahbubur. Rahman/Desktop/GitHub/selenium_java_testng_automation/testngSuite.xml" />
-        <item itemvalue="TestNG.SkillTest.skillTest" />
+        <item itemvalue="TestNG.C:/Users/Md. Mahbubur. Rahman/Desktop/EcommerceDemo/testSuite.xml" />
+        <item itemvalue="TestNG.HomePageTest.Test_01_01" />
+        <item itemvalue="TestNG.HomePageTest" />
+        <item itemvalue="TestNG.HomePageTest.homePageTest" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="748cc342-f05d-4dab-b5ca-5c31ff41e97b" name="Changes" comment="" />
-      <created>1673986090237</created>
+      <changelist id="9952ad5f-06b1-4b42-b93d-c919742f7167" name="Changes" comment="" />
+      <created>1676548562754</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1673986090237</updated>
+      <updated>1676548562754</updated>
     </task>
     <servers />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
   </component>
 </project>
