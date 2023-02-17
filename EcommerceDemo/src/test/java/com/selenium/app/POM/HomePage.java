@@ -1,6 +1,5 @@
 package com.selenium.app.POM;
 
-import com.selenium.app.utility.Log;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
