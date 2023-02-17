@@ -1,8 +1,6 @@
 package com.selenium.app.Tests;
 
-import com.selenium.app.DriverPoolManager;
-import com.selenium.app.POM.HomePage;
-import org.openqa.selenium.WebDriver;
+import com.selenium.app.resources.DriverPoolManager;
 import org.testng.annotations.*;
 
 
