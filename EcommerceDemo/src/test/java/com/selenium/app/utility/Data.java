@@ -11,7 +11,4 @@ public class Data {
     public static final String TestComplete = "******************* Test Execution Completed *******************";
     public static final String LOG_DESIGN = "******************  ";
     public static final String HOME_PAGE = "https://ecommerce-playground.lambdatest.io/";
-
-
-
 }

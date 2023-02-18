@@ -54,10 +54,6 @@ public class HomePage {
         }
     }
 
-    private WebElement registerLink() {
-        return driver.findElement(By.cssSelector(".mz-sub-menu-96 > li:nth-child(2) > a"));
-    }
-
     public void validatingUrl(String ExpectedUrl) {
         String url = driver.getCurrentUrl();
         Assert.assertEquals(url, ExpectedUrl);

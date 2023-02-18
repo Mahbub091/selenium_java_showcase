@@ -1,6 +1,6 @@
-package com.selenium.app.Tests;
+package com.selenium.app.baseConfiguration;
 
-import com.selenium.app.DriverPoolManager;
+import com.selenium.app.resources.DriverPoolManager;
 import com.selenium.app.utility.Data;
 import org.testng.annotations.*;
 
