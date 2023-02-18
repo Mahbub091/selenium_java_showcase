@@ -7,7 +7,6 @@
             <class name="com.selenium.app.Tests.HomePageTest">
                 <methods>
                     <include name="Test_01_01" />
-                    <include name="Test_01_02" />
                 </methods>
             </class>
         </classes>

@@ -1,8 +1,7 @@
 package com.selenium.app.Tests;
 
 import com.selenium.app.DriverPoolManager;
-import com.selenium.app.POM.HomePage;
-import org.openqa.selenium.WebDriver;
+import com.selenium.app.utility.Data;
 import org.testng.annotations.*;
 
 
@@ -20,6 +19,7 @@ public class BaseTest {
         {
             e.printStackTrace();
         }
+        System.out.println(Data.TestStart);
     }
 
     @AfterTest(alwaysRun = true)
@@ -33,6 +33,6 @@ public class BaseTest {
         {
             e.printStackTrace();
         }
-
+        System.out.println(Data.TestComplete);
     }
 }

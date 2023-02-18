@@ -4,7 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9952ad5f-06b1-4b42-b93d-c919742f7167" name="Changes" comment="" />
+    <list default="true" id="9952ad5f-06b1-4b42-b93d-c919742f7167" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/3/138687425e126d32fe73af2b94425653b2c251e5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/7/17c4a66218795f36d1dc536fbba946036a4e07bc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/8/18c9539e1599b64db92f13506f415dbc17939e36" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/4/442292b8a7efeabbe4cc176709b833b1792140ec" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/4/446fac9e9aa8fbbf5ff039e8d85feee33f7554eb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/c/4cae7022089dbbd9a15b4153e8330262ef1e2256" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/f/4fa87518ca00d25b6dae5b7f13fa84a14f9e5119" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/9/c9adf794466acc149c897cbc96707b7dbda3a782" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EcommerceDemo/src/test/java/com/selenium/app/Tests/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/EcommerceDemo/src/test/java/com/selenium/app/Tests/BaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EcommerceDemo/src/test/java/com/selenium/app/Tests/HomePageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/EcommerceDemo/src/test/java/com/selenium/app/Tests/HomePageTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,6 +29,9 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
