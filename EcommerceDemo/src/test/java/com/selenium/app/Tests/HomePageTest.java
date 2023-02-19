@@ -8,6 +8,9 @@ import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class HomePageTest extends BaseTest {
     private WebDriver driver;
 
@@ -25,9 +28,11 @@ public class HomePageTest extends BaseTest {
         // Staring Test Case
 
         homePage.visit(Data.HOME_PAGE);
-        testUtils.wait(3);
         homePage.validatingUrl(Data.HOME_PAGE);
+        homePage.assertingTitle(Data.PAGE_TITLE);
         homePage.enteringTextOnSearBox();
         homePage.clickingTheSearchButton();
+        homePage.menuCheck();
+        homePage.clickOnMyAccountButton();
     }
 }
