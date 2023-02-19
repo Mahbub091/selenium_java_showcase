@@ -2,18 +2,12 @@ package com.selenium.app.POM;
 
 import com.selenium.app.utility.Data;
 import com.selenium.app.utility.TestUtils;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
-
-import java.util.Arrays;
-import java.util.List;
-
-import static org.testng.AssertJUnit.assertTrue;
 
 public class HomePage {
     private WebDriver driver;
@@ -65,15 +59,24 @@ public class HomePage {
      */
 
     public void visit(String navigate){
-        testUtils.terminalLog("Navigating to HomePage: " + Data.HOME_PAGE);
-        driver.navigate().to(navigate);
-        testUtils.wait(1);
+        try{
+            testUtils.terminalLog("Navigating to HomePage: " + Data.HOME_PAGE);
+            driver.navigate().to(navigate);
+            testUtils.wait(1);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
     }
 
     public void assertingTitle(String expectedTitle){
-        String title = driver.getTitle();
-        testUtils.terminalLog("Validating the Title: " + title);
-        Assert.assertEquals(title, expectedTitle);
+        try{
+            String title = driver.getTitle();
+            testUtils.terminalLog("Validating the Title: " + title);
+            Assert.assertEquals(title, expectedTitle);
+        } catch (Exception e){
+            e.printStackTrace();
+        }
     }
 
     public void enteringTextOnSearBox(){
@@ -82,8 +85,7 @@ public class HomePage {
             searchBox.isDisplayed();
             searchBox.sendKeys(Data.RandomTech);
             testUtils.wait(1);
-        } catch (Exception e)
-        {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
@@ -91,12 +93,11 @@ public class HomePage {
     public void clickingTheSearchButton(){
         try {
             testUtils.terminalLog("Clicking On Search Button");
-            testUtils.waitForElementIsClickable(searchBox, 90);
             searchButton.isDisplayed();
+            testUtils.waitForElementIsClickable(searchBox, 90);
             searchButton.click();
             testUtils.wait(1);
-        } catch (Exception e)
-        {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
@@ -126,4 +127,23 @@ public class HomePage {
         this.menuTextAssertion(featuredMenu, "Featured");
         this.menuTextAssertion(myAccountMenu, "My account");
     }
+
+    public void clickOnMyAccountButton(){
+        try{
+            testUtils.waitForElementVisibility(myAccountMenu,90);
+            testUtils.mouseHover(myAccountMenu);
+            testUtils.wait(1);
+            testUtils.clickingElement(myAccountMenu);
+            testUtils.wait(1);
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+
+
+
+
+
+
 }

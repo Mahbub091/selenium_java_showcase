@@ -3,6 +3,7 @@ package com.selenium.app.utility;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -17,28 +18,11 @@ public class TestUtils {
     }
 
     /**
-     * It will give the object of "By"
-     *
-     * @param locator e.g : //div[@class='demo']_xpath
-     * @return By object
+     * It will Log your Texts on Terminal.
      */
-    public By getByObject(String locator) {
-        locator = locator.trim();
-        By byObj = null;
-        if (locator.endsWith("_xpath")) {
-            byObj = By.xpath(locator.replaceAll("_xpath", ""));
-        } else if (locator.endsWith("_css")) {
-            byObj = By.cssSelector(locator.replaceAll("_css", ""));
-        } else if (locator.endsWith("_id")) {
-            byObj = By.id(locator.replaceAll("_id", ""));
-        } else if (locator.endsWith("_linkText")) {
-            byObj = By.linkText(locator.replaceAll("__linkText", ""));
-        } else if (locator.endsWith("_name")) {
-            byObj = By.name(locator.replaceAll("_name", ""));
-        }
 
-        return byObj;
-
+    public void terminalLog(String logText) {
+        System.out.println(logText);
     }
 
     public void wait(int seconds) {
@@ -52,7 +36,7 @@ public class TestUtils {
 
     public void clickingElement(WebElement element){
         try {
-            System.out.println("Clicking On The " + element);
+            this.terminalLog("Clicking On: " + element);
             element.click();
         }catch(Exception exception){
             exception.printStackTrace();
@@ -71,22 +55,22 @@ public class TestUtils {
 
     /**
      * It will check that an element is present on the DOM of a page and visible.
-     *
-     * @param locator
      * @param seconds
      */
-    public void waitForElementVisibility(String locator, long seconds) {
+    public void waitForElementVisibility(WebElement webElement, long seconds) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(seconds));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(getByObject(locator)));
-
+        wait.until(ExpectedConditions.visibilityOf(webElement));
     }
 
     /**
-     * It will Log your Texts on Terminal.
-     *
+     * It will perform mouse hover operation on the WebElement.
+     * @param elementToHover
      */
-
-    public void terminalLog(String logText) {
-        System.out.println(logText);
+    public void mouseHover(WebElement elementToHover) {
+        this.terminalLog("Hovering to: " + elementToHover);
+        Actions hover = new Actions(driver);
+        hover.moveToElement(elementToHover);
+        hover.build();
+        hover.perform();
     }
 }

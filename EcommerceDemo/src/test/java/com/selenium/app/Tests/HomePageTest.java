@@ -33,5 +33,6 @@ public class HomePageTest extends BaseTest {
         homePage.enteringTextOnSearBox();
         homePage.clickingTheSearchButton();
         homePage.menuCheck();
+        homePage.clickOnMyAccountButton();
     }
 }
