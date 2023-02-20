@@ -4,14 +4,20 @@ import com.selenium.app.utility.Data;
 import com.selenium.app.utility.TestUtils;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
+import org.apache.logging.log4j.*;
+
+
+
 public class HomePage {
     private WebDriver driver;
     private TestUtils testUtils;
+    Logger log = LogManager.getLogger("HomePage");
+
+
 
 
     public HomePage(WebDriver driver) {
@@ -67,6 +73,7 @@ public class HomePage {
             e.printStackTrace();
         }
 
+        log.info("Navigating to " + navigate);
     }
 
     public void assertingTitle(String expectedTitle){
