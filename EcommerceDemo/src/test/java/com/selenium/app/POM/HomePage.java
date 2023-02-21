@@ -4,15 +4,17 @@ import com.selenium.app.utility.Data;
 import com.selenium.app.utility.TestUtils;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
+import org.apache.logging.log4j.*;
+
+
 public class HomePage {
     private WebDriver driver;
     private TestUtils testUtils;
-
+    Logger log = LogManager.getLogger("HomePage");
 
     public HomePage(WebDriver driver) {
         this.driver = driver;
@@ -51,8 +53,11 @@ public class HomePage {
     @FindBy(css = "[class='badge mx-1 mz-menu-label-25']")
     WebElement featuredMenu;
 
-    @FindBy(css = "div#widget-navbar-217834 > ul > li:nth-of-type(6) > a[role='button']")
+    @FindBy(xpath = "//ul[@class=\"navbar-nav horizontal\"]//li//a[contains(@href,'https://ecommerce-playground.lambdatest.io/index.php?route=account/account')]")
     WebElement myAccountMenu;
+
+    @FindBy(xpath = "//div[@id='widget-navbar-217834']/ul/li[6]/ul//a[@href='https://ecommerce-playground.lambdatest.io/index.php?route=account/login']//span[@class='title']")
+    WebElement loginMenu;
 
     /**
      * We'll define the methods here.
@@ -60,39 +65,36 @@ public class HomePage {
 
     public void visit(String navigate){
         try{
-            testUtils.terminalLog("Navigating to HomePage: " + Data.HOME_PAGE);
             driver.navigate().to(navigate);
-            testUtils.wait(1);
         }catch (Exception e){
             e.printStackTrace();
         }
-
+        log.info("Navigating to " + navigate);
     }
 
     public void assertingTitle(String expectedTitle){
         try{
             String title = driver.getTitle();
-            testUtils.terminalLog("Validating the Title: " + title);
             Assert.assertEquals(title, expectedTitle);
         } catch (Exception e){
             e.printStackTrace();
         }
+        log.info("Validating Title to Have: " + expectedTitle);
     }
 
     public void enteringTextOnSearBox(){
+        log.info("Enter Text On SearchBox: " + Data.RandomTech);
         try {
-            testUtils.terminalLog("Entering Text: " + Data.RandomTech);
-            searchBox.isDisplayed();
-            searchBox.sendKeys(Data.RandomTech);
-            testUtils.wait(1);
-        } catch (Exception e) {
-            e.printStackTrace();
+            testUtils.waitForElementVisibility(searchBox, 30);
+            testUtils.enteringText(searchBox, Data.RandomTech);
+        } catch (Exception exception) {
+            exception.printStackTrace();
         }
-    }
+        }
+
 
     public void clickingTheSearchButton(){
         try {
-            testUtils.terminalLog("Clicking On Search Button");
             searchButton.isDisplayed();
             testUtils.waitForElementIsClickable(searchBox, 90);
             searchButton.click();
@@ -103,47 +105,48 @@ public class HomePage {
     }
 
     public void validatingUrl(String ExpectedUrl) {
-        String url = driver.getCurrentUrl();
-        testUtils.terminalLog("Validating URL: " + url);
-        Assert.assertEquals(url, ExpectedUrl);
+        try{
+            String url = driver.getCurrentUrl();
+            log.info(("Validating URL: " + url));
+            Assert.assertEquals(url, ExpectedUrl);
+        } catch (Exception e){
+            e.printStackTrace();
+        }
     }
 
     public void menuTextAssertion(WebElement element, String expectedText){
         try{
             String text = element.getText().trim();
-            System.out.println("Checking Menus: " + text);
+            log.info("Validating: " + text + "IsEqual" + expectedText);
             Assert.assertEquals(text, expectedText);
         }catch (Exception e)
         {e.printStackTrace();}
     }
 
     public void menuCheck(){
-        this.menuTextAssertion(homeMenu, "Home");
-        this.menuTextAssertion(specialMenu, "Special");
-        this.menuTextAssertion(hotLabelMenu, "Hot");
-        this.menuTextAssertion(blogMenu, "Blog");
-        this.menuTextAssertion(megaMenu, "Mega Menu");
-        this.menuTextAssertion(addOnsMenu, "AddOns");
-        this.menuTextAssertion(featuredMenu, "Featured");
-        this.menuTextAssertion(myAccountMenu, "My account");
+        try {
+            this.menuTextAssertion(homeMenu, "Home");
+            this.menuTextAssertion(specialMenu, "Special");
+            this.menuTextAssertion(hotLabelMenu, "Hot");
+            this.menuTextAssertion(blogMenu, "Blog");
+            this.menuTextAssertion(megaMenu, "Mega Menu");
+            this.menuTextAssertion(addOnsMenu, "AddOns");
+            this.menuTextAssertion(featuredMenu, "Featured");
+            this.menuTextAssertion(myAccountMenu, "My account");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public void clickOnMyAccountButton(){
         try{
             testUtils.waitForElementVisibility(myAccountMenu,90);
-            testUtils.mouseHover(myAccountMenu);
-            testUtils.wait(1);
-            testUtils.clickingElement(myAccountMenu);
-            testUtils.wait(1);
+            testUtils.mouseHoverUsingJs(myAccountMenu);
+            testUtils.waitForElementVisibility(loginMenu, 30);
+            testUtils.clickingElement(loginMenu);
         } catch (Exception e){
             e.printStackTrace();
         }
     }
-
-
-
-
-
-
 
 }
