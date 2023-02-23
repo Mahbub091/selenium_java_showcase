@@ -50,17 +50,15 @@ public class TestUtils {
     /**
      * It will check that an element is present on the DOM of a page and visible.
      *
-     * @param seconds
      */
     public void waitForElementIsClickable(WebElement webElement, long seconds) {
         log.info(("Waiting For Element Is Clickable: " + webElement));
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(90));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(seconds));
         wait.until(ExpectedConditions.elementToBeClickable(webElement));
     }
 
     /**
      * It will check that an element is present on the DOM of a page and visible.
-     * @param seconds
      */
     public void waitForElementVisibility(WebElement webElement, long seconds) {
         log.info("Waiting For Visibility Of: " + webElement);
@@ -70,7 +68,6 @@ public class TestUtils {
 
     /**
      * It will perform mouse hover operation on the WebElement.
-     * @param elementToHover
      */
     public void mouseHover(WebElement elementToHover) {
         log.info("Hovering to: " + elementToHover);
@@ -80,6 +77,9 @@ public class TestUtils {
         hover.perform();
     }
 
+    /**
+     * It will enter Text.
+     */
     public void enteringText(WebElement element, String text){
         try{
             element.isDisplayed();
@@ -92,8 +92,6 @@ public class TestUtils {
 
     /**
      * It will perform mouse hover operation on the WebElement using javascript.
-     *
-     * @param elementToHover
      */
     public void mouseHoverUsingJs(WebElement elementToHover) {
         String mouseOverScript = "if(document.createEvent){var evObj = document.createEvent('MouseEvents');evObj.initEvent('mouseover', true, false); arguments[0].dispatchEvent(evObj);}else if(document.createEventObject){ arguments[0].fireEvent('onmouseover');}";
