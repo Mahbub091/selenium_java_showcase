@@ -6,8 +6,15 @@
         <classes>
             <class name="com.selenium.app.Tests.HomePageTest">
                 <methods>
-                    <include name="Test_01_01" />
-                    <include name="Test_01_02" />
+                    <exclude name="Test_01_01" />
+                    <exclude name="Test_01_02" />
+                </methods>
+            </class>
+
+            <class name="com.selenium.app.Tests.RegisterUserTest">
+                <methods>
+                    <include name="Test_02_01" />
+                    <include name="Test_02_02" />
                 </methods>
             </class>
         </classes>

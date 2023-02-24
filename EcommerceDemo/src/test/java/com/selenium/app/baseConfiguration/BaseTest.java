@@ -22,7 +22,7 @@ public class BaseTest {
         System.out.println(Data.TestStart);
     }
 
-    @AfterTest(alwaysRun = true)
+    @AfterClass(alwaysRun = true)
     public void tearDown() {
         try
         {
