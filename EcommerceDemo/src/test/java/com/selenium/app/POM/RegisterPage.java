@@ -8,9 +8,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.Assert;
-
-import java.util.List;
 
 public class RegisterPage {
 
@@ -33,13 +30,10 @@ public class RegisterPage {
 
     @FindBy(xpath = "/html//div[@id='content']/div/div[1]/div[@class='card mb-4']/div[@class='card-body p-4']")
     WebElement registerAccountBox;
-
     @FindBy(xpath = "/html//div[@id='content']/div[@class='row']//a[@href='https://ecommerce-playground.lambdatest.io/index.php?route=account/register']")
     WebElement registerContinueButton;
-
     @FindBy(css = "[class] .list-group-item:nth-of-type(1)")
     WebElement loginMenu;
-
     @FindBy(css = "[class] .list-group-item:nth-of-type(2)")
     WebElement registerMenu;
     @FindBy(css = "[class] .list-group-item:nth-of-type(3)")
@@ -64,7 +58,6 @@ public class RegisterPage {
     WebElement transactionsMenu;
     @FindBy(css = "[class] .list-group-item:nth-of-type(13)")
     WebElement newsletterMenu;
-
     @FindBy(xpath = "/html//input[@id='input-firstname']")
     WebElement firstName;
     @FindBy(xpath = "/html//input[@id='input-lastname']")
@@ -75,12 +68,10 @@ public class RegisterPage {
     WebElement phoneNumber;
     @FindBy(xpath = "/html//input[@id='input-password']")
     WebElement password;
-
     @FindBy(xpath = "/html//input[@id='input-confirm']")
     WebElement confirmPassword;
     @FindBy(css = "[for='input-agree']")
     WebElement agreeToTermsAndPolicy;
-
     @FindBy(css = "div#content > form[method='post'] input[value='Continue']")
     WebElement continueButton;
 

@@ -114,8 +114,6 @@ public class TestUtils {
 
     /**
      * It will validate Element to Have Expected Text
-     * @param element
-     * @param text
      */
     public void validateElementsToHaveExpectedText(WebElement element, String text){
         log.info("Validating " + element + "To Have Text : " + text);

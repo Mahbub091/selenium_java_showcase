@@ -3,13 +3,9 @@ package com.selenium.app.Tests;
 import com.selenium.app.POM.HomePage;
 import com.selenium.app.baseConfiguration.BaseTest;
 import com.selenium.app.utility.Data;
-import com.selenium.app.utility.TestUtils;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-
-import java.util.Arrays;
-import java.util.List;
 
 public class HomePageTest extends BaseTest {
     private WebDriver driver;
