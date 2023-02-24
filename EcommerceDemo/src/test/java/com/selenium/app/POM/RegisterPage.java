@@ -1,0 +1,158 @@
+package com.selenium.app.POM;
+
+import com.selenium.app.utility.Data;
+import com.selenium.app.utility.TestUtils;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
+
+import java.util.List;
+
+public class RegisterPage {
+
+    int max_time_out = 60;
+    int min_time_out = 30;
+
+    private WebDriver driver;
+    private TestUtils testUtils;
+    Logger log = LogManager.getLogger("RegisterPage");
+
+    public RegisterPage(WebDriver driver) {
+        this.driver = driver;
+        PageFactory.initElements(driver, this);
+        testUtils = new TestUtils(driver);
+    }
+
+    /**
+     * Our Elements Will Be Stored Here.
+     */
+
+    @FindBy(xpath = "/html//div[@id='content']/div/div[1]/div[@class='card mb-4']/div[@class='card-body p-4']")
+    WebElement registerAccountBox;
+
+    @FindBy(xpath = "/html//div[@id='content']/div[@class='row']//a[@href='https://ecommerce-playground.lambdatest.io/index.php?route=account/register']")
+    WebElement registerContinueButton;
+
+    @FindBy(css = "[class] .list-group-item:nth-of-type(1)")
+    WebElement loginMenu;
+
+    @FindBy(css = "[class] .list-group-item:nth-of-type(2)")
+    WebElement registerMenu;
+    @FindBy(css = "[class] .list-group-item:nth-of-type(3)")
+    WebElement forgottenPasswordMenu;
+    @FindBy(css = "[class] .list-group-item:nth-of-type(4)")
+    WebElement myAccountMenu;
+    @FindBy(css = "[class] .list-group-item:nth-of-type(5)")
+    WebElement addressBookMenu;
+    @FindBy(css = "[class] .list-group-item:nth-of-type(6)")
+    WebElement wishListMenu;
+    @FindBy(css = "[class] .list-group-item:nth-of-type(7)")
+    WebElement orderHistoryMenu;
+    @FindBy(css = "[class] .list-group-item:nth-of-type(8)")
+    WebElement downloadsMenu;
+    @FindBy(css = "[class] .list-group-item:nth-of-type(9)")
+    WebElement recurringPaymentsMenu;
+    @FindBy(css = "[class] .list-group-item:nth-of-type(10)")
+    WebElement rewardPointsMenu;
+    @FindBy(css = "[class] .list-group-item:nth-of-type(11)")
+    WebElement returnsMenu;
+    @FindBy(css = "[class] .list-group-item:nth-of-type(12)")
+    WebElement transactionsMenu;
+    @FindBy(css = "[class] .list-group-item:nth-of-type(13)")
+    WebElement newsletterMenu;
+
+    @FindBy(xpath = "/html//input[@id='input-firstname']")
+    WebElement firstName;
+    @FindBy(xpath = "/html//input[@id='input-lastname']")
+    WebElement lastName;
+    @FindBy(xpath = "/html//input[@id='input-email']")
+    WebElement email;
+    @FindBy(xpath = "/html//input[@id='input-telephone']")
+    WebElement phoneNumber;
+    @FindBy(xpath = "/html//input[@id='input-password']")
+    WebElement password;
+
+    @FindBy(xpath = "/html//input[@id='input-confirm']")
+    WebElement confirmPassword;
+    @FindBy(css = "[for='input-agree']")
+    WebElement agreeToTermsAndPolicy;
+
+    @FindBy(css = "div#content > form[method='post'] input[value='Continue']")
+    WebElement continueButton;
+
+
+
+
+
+    /**
+     * We'll define the methods here.
+     */
+
+    public void registerBoxActions(){
+        try{
+            testUtils.waitForElementVisibility(registerAccountBox, max_time_out);
+            testUtils.waitForElementVisibility(registerContinueButton, min_time_out);
+            testUtils.waitForElementIsClickable(registerContinueButton, min_time_out);
+            testUtils.clickingElement(registerContinueButton);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    public void validatingNewURLandMenuText(){
+        testUtils.assertUrl(Data.ACCOUNT_REGISTER_PAGE);
+        testUtils.validateElementsToHaveExpectedText(loginMenu, "Login");
+        testUtils.validateElementsToHaveExpectedText(registerMenu, "Register");
+        testUtils.validateElementsToHaveExpectedText(forgottenPasswordMenu, "Forgotten Password");
+        testUtils.validateElementsToHaveExpectedText(myAccountMenu, "My Account");
+        testUtils.validateElementsToHaveExpectedText(addressBookMenu, "Address Book");
+        testUtils.validateElementsToHaveExpectedText(wishListMenu, "Wish List");
+        testUtils.validateElementsToHaveExpectedText(orderHistoryMenu, "Order History");
+        testUtils.validateElementsToHaveExpectedText(recurringPaymentsMenu, "Recurring payments");
+        testUtils.validateElementsToHaveExpectedText(rewardPointsMenu, "Reward Points");
+        testUtils.validateElementsToHaveExpectedText(returnsMenu, "Returns");
+        testUtils.validateElementsToHaveExpectedText(transactionsMenu, "Transactions");
+        testUtils.validateElementsToHaveExpectedText(downloadsMenu, "Downloads");
+        testUtils.validateElementsToHaveExpectedText(newsletterMenu, "Newsletter");
+    }
+
+    public void enterRegisterMenuDetails(){
+        log.info("Entering Details On Register Menu");
+        try{
+            testUtils.waitForElementVisibility(firstName, min_time_out);
+            testUtils.enteringText(firstName, Data.FIRST_NAME);
+            testUtils.waitForElementVisibility(lastName, min_time_out);
+            testUtils.enteringText(lastName, Data.LAST_NAME);
+            testUtils.waitForElementVisibility(email, min_time_out);
+            testUtils.enteringText(email, Data.EMAIL);
+            testUtils.waitForElementVisibility(phoneNumber, min_time_out);
+            testUtils.enteringText(phoneNumber, Data.TELEPHONE);
+            testUtils.waitForElementVisibility(password, min_time_out);
+            testUtils.enteringText(password, Data.PASSWORD);
+            testUtils.waitForElementVisibility(confirmPassword, min_time_out);
+            testUtils.enteringText(confirmPassword, Data.PASSWORD);
+            testUtils.waitForElementIsClickable(agreeToTermsAndPolicy, min_time_out);
+            testUtils.clickingElement(agreeToTermsAndPolicy);
+            testUtils.clickingElement(continueButton);
+
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+}

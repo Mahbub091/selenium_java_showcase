@@ -92,7 +92,6 @@ public class HomePage {
         }
         }
 
-
     public void clickingTheSearchButton(){
         try {
             searchButton.isDisplayed();
@@ -144,6 +143,7 @@ public class HomePage {
             testUtils.mouseHoverUsingJs(myAccountMenu);
             testUtils.waitForElementVisibility(loginMenu, 30);
             testUtils.clickingElement(loginMenu);
+
         } catch (Exception e){
             e.printStackTrace();
         }

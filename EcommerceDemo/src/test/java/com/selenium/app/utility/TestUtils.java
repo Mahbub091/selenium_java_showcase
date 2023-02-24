@@ -8,13 +8,14 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 import java.time.Duration;
 
 public class TestUtils {
 
-    private WebDriver driver = null;
-    Logger log = LogManager.getLogger("HomePage");
+    private WebDriver driver;
+    Logger log = LogManager.getLogger("TestUtils");
 
     public TestUtils(WebDriver driver) {
         this.driver = driver;
@@ -97,4 +98,37 @@ public class TestUtils {
         String mouseOverScript = "if(document.createEvent){var evObj = document.createEvent('MouseEvents');evObj.initEvent('mouseover', true, false); arguments[0].dispatchEvent(evObj);}else if(document.createEventObject){ arguments[0].fireEvent('onmouseover');}";
         ((JavascriptExecutor) driver).executeScript(mouseOverScript, elementToHover);
     }
+
+    /**
+     * It will validate URL
+     */
+    public void assertUrl(String expectedUrl){
+        log.info("Validating URL: " + expectedUrl);
+        try{
+            String url = driver.getCurrentUrl();
+            Assert.assertEquals(url, expectedUrl);
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * It will validate Element to Have Expected Text
+     * @param element
+     * @param text
+     */
+    public void validateElementsToHaveExpectedText(WebElement element, String text){
+        log.info("Validating " + element + "To Have Text : " + text);
+        try{
+            String eleText = element.getText().trim();
+            Assert.assertEquals(eleText, text);
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+
+
+
+
 }
