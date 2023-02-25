@@ -116,7 +116,7 @@ public class HomePage {
     public void menuTextAssertion(WebElement element, String expectedText){
         try{
             String text = element.getText().trim();
-            log.info("Validating: " + text + "IsEqual" + expectedText);
+            log.info("Validating: " + text + " Is Equal " + expectedText);
             Assert.assertEquals(text, expectedText);
         }catch (Exception e)
         {e.printStackTrace();}

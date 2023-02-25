@@ -1,10 +1,6 @@
 package com.selenium.app.utility;
 
 import com.github.javafaker.Faker;
-import org.openqa.selenium.WebElement;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class Data {
     static Faker faker = new Faker();
