@@ -18,12 +18,30 @@ public class HomePageTest extends BaseTest {
         homePage = new HomePage(driver);
     }
 
+    /**
+     * Go to ecommerce-playground.lambdatest.io
+     * Type "iphone"
+     * Click on iPhone…
+     * Click on All Categories…
+     * Click on SEARCH
+     * Drag highlighted button
+     * Type "apple"
+     * Click on SEARCH
+     * Click on Search Criteria
+     * Click on All Categories
+     * Click on 25 from Show:
+     * Click on Best sellers from Sort By:
+     * Click on MacBook Pro
+     * Click on Apple Cinema 30&quot;
+     * Click on Apple Cinema 30"
+     *
+     */
+
     @Test(testName = "Test_01_01", description = "Validating Url")
     public void Test_01_01() {
 
-        // Staring Test Case
-
         homePage.visit(Data.HOME_PAGE);
+//        homePage.checkingLinks(); TODO: Uncomment this line to check the broken links on the current page.
         homePage.validatingUrl(Data.HOME_PAGE);
         homePage.assertingTitle(Data.PAGE_TITLE);
         homePage.menuCheck();
