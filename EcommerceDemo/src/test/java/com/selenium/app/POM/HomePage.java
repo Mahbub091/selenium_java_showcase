@@ -2,6 +2,7 @@ package com.selenium.app.POM;
 
 import com.selenium.app.utility.Data;
 import com.selenium.app.utility.TestUtils;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -9,6 +10,14 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
 import org.apache.logging.log4j.*;
+
+import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
 
 public class HomePage {
@@ -63,26 +72,26 @@ public class HomePage {
      * We'll define the methods here.
      */
 
-    public void visit(String navigate){
-        try{
+    public void visit(String navigate) {
+        try {
             driver.navigate().to(navigate);
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
         log.info("Navigating to " + navigate);
     }
 
-    public void assertingTitle(String expectedTitle){
-        try{
+    public void assertingTitle(String expectedTitle) {
+        try {
             String title = driver.getTitle();
             Assert.assertEquals(title, expectedTitle);
-        } catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
         log.info("Validating Title to Have: " + expectedTitle);
     }
 
-    public void enteringTextOnSearBox(){
+    public void enteringTextOnSearBox() {
         log.info("Enter Text On SearchBox: " + Data.RandomTech);
         try {
             testUtils.waitForElementVisibility(searchBox, 30);
@@ -90,9 +99,9 @@ public class HomePage {
         } catch (Exception exception) {
             exception.printStackTrace();
         }
-        }
+    }
 
-    public void clickingTheSearchButton(){
+    public void clickingTheSearchButton() {
         try {
             searchButton.isDisplayed();
             testUtils.waitForElementIsClickable(searchBox, 90);
@@ -104,25 +113,26 @@ public class HomePage {
     }
 
     public void validatingUrl(String ExpectedUrl) {
-        try{
+        try {
             String url = driver.getCurrentUrl();
             log.info(("Validating URL: " + url));
             Assert.assertEquals(url, ExpectedUrl);
-        } catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    public void menuTextAssertion(WebElement element, String expectedText){
-        try{
+    public void menuTextAssertion(WebElement element, String expectedText) {
+        try {
             String text = element.getText().trim();
             log.info("Validating: " + text + " Is Equal " + expectedText);
             Assert.assertEquals(text, expectedText);
-        }catch (Exception e)
-        {e.printStackTrace();}
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
-    public void menuCheck(){
+    public void menuCheck() {
         try {
             this.menuTextAssertion(homeMenu, "Home");
             this.menuTextAssertion(specialMenu, "Special");
@@ -137,16 +147,52 @@ public class HomePage {
         }
     }
 
-    public void clickOnMyAccountButton(){
-        try{
-            testUtils.waitForElementVisibility(myAccountMenu,90);
+    public void clickOnMyAccountButton() {
+        try {
+            testUtils.waitForElementVisibility(myAccountMenu, 90);
             testUtils.mouseHoverUsingJs(myAccountMenu);
             testUtils.waitForElementVisibility(loginMenu, 30);
             testUtils.clickingElement(loginMenu);
 
-        } catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
+    /**
+     * This Function Will Validate All The Links On Your Current Page
+     */
+
+    public void checkingLinks() {
+        String url = "";
+        HttpURLConnection huc = null;
+        int respCode = 200;
+        List<WebElement> links = driver.findElements(By.tagName("a"));
+        Iterator<WebElement> it = links.iterator();
+        while (it.hasNext()) {
+            url = it.next().getAttribute("href");
+              log.info(url);
+            if (url == null || url.isEmpty()) {
+                continue;
+            }
+
+            try {
+                huc = (HttpURLConnection) (new URL(url).openConnection());
+                huc.setRequestMethod("HEAD");
+                huc.connect();
+                respCode = huc.getResponseCode();
+                if (respCode >= 400) {
+                    log.info(url + " is a broken link & Response code is: " + respCode);
+                } else {
+                    log.info(url+" is a valid link & Responded: " + respCode);
+                }
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+
+    }
 }
