@@ -12,12 +12,6 @@ public class Data {
     public static final String TestStart = "******************* Starting Test *******************";
     public static final String TestComplete = "******************* Test Execution Completed *******************";
 
-    /**
-     *  This Section will store All The Links.
-     */
-    public static final String HOME_PAGE = "https://ecommerce-playground.lambdatest.io/";
-    public static final String LOGIN_PAGE = "https://ecommerce-playground.lambdatest.io/index.php?route=account/login";
-    public static final String ACCOUNT_REGISTER_PAGE = "https://ecommerce-playground.lambdatest.io/index.php?route=account/register";
 
     /**
      *  This Section will store Account Login Info that We're Using.

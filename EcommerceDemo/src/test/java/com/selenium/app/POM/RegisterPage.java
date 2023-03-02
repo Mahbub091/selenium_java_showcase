@@ -1,5 +1,6 @@
 package com.selenium.app.POM;
 
+import com.selenium.app.baseConfiguration.ConfigReader;
 import com.selenium.app.utility.Data;
 import com.selenium.app.utility.TestUtils;
 import org.apache.logging.log4j.LogManager;
@@ -11,17 +12,21 @@ import org.openqa.selenium.support.PageFactory;
 
 public class RegisterPage {
 
-    int max_time_out = 60;
-    int min_time_out = 30;
-
-    private WebDriver driver;
-    private TestUtils testUtils;
+    int time_out_max = 60;
+    int time_out_min = 30;
+    int pause_normal = 1;
+    int pause_long = 2;
+    int pause_extended = 3;
+    WebDriver driver;
+    TestUtils testUtils;
+    ConfigReader configReader;
     Logger log = LogManager.getLogger("RegisterPage");
 
     public RegisterPage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
         testUtils = new TestUtils(driver);
+        configReader = new ConfigReader();
     }
 
     /**
@@ -85,9 +90,9 @@ public class RegisterPage {
 
     public void registerBoxActions(){
         try{
-            testUtils.waitForElementVisibility(registerAccountBox, max_time_out);
-            testUtils.waitForElementVisibility(registerContinueButton, min_time_out);
-            testUtils.waitForElementIsClickable(registerContinueButton, min_time_out);
+            testUtils.waitForElementVisibility(registerAccountBox, time_out_max);
+            testUtils.waitForElementVisibility(registerContinueButton, time_out_min);
+            testUtils.waitForElementIsClickable(registerContinueButton, time_out_min);
             testUtils.clickingElement(registerContinueButton);
         }catch (Exception e){
             e.printStackTrace();
@@ -95,7 +100,7 @@ public class RegisterPage {
     }
 
     public void validatingNewURLandMenuText(){
-        testUtils.assertUrl(Data.ACCOUNT_REGISTER_PAGE);
+        testUtils.assertUrl(configReader.registrationPageURL());
         testUtils.validateElementsToHaveExpectedText(loginMenu, "Login");
         testUtils.validateElementsToHaveExpectedText(registerMenu, "Register");
         testUtils.validateElementsToHaveExpectedText(forgottenPasswordMenu, "Forgotten Password");
@@ -114,22 +119,21 @@ public class RegisterPage {
     public void enterRegisterMenuDetails(){
         log.info("Entering Details On Register Menu");
         try{
-            testUtils.waitForElementVisibility(firstName, min_time_out);
+            testUtils.waitForElementVisibility(firstName, time_out_min);
             testUtils.enteringText(firstName, Data.FIRST_NAME);
-            testUtils.waitForElementVisibility(lastName, min_time_out);
+            testUtils.waitForElementVisibility(lastName, time_out_min);
             testUtils.enteringText(lastName, Data.LAST_NAME);
-            testUtils.waitForElementVisibility(email, min_time_out);
+            testUtils.waitForElementVisibility(email, time_out_min);
             testUtils.enteringText(email, Data.EMAIL);
-            testUtils.waitForElementVisibility(phoneNumber, min_time_out);
+            testUtils.waitForElementVisibility(phoneNumber, time_out_min);
             testUtils.enteringText(phoneNumber, Data.TELEPHONE);
-            testUtils.waitForElementVisibility(password, min_time_out);
+            testUtils.waitForElementVisibility(password, time_out_min);
             testUtils.enteringText(password, Data.PASSWORD);
-            testUtils.waitForElementVisibility(confirmPassword, min_time_out);
+            testUtils.waitForElementVisibility(confirmPassword, time_out_min);
             testUtils.enteringText(confirmPassword, Data.PASSWORD);
-            testUtils.waitForElementIsClickable(agreeToTermsAndPolicy, min_time_out);
+            testUtils.waitForElementIsClickable(agreeToTermsAndPolicy, time_out_min);
             testUtils.clickingElement(agreeToTermsAndPolicy);
             testUtils.clickingElement(continueButton);
-
         } catch (Exception e){
             e.printStackTrace();
         }

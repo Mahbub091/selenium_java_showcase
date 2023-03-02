@@ -2,6 +2,7 @@ package com.selenium.app.Tests;
 
 import com.selenium.app.POM.HomePage;
 import com.selenium.app.baseConfiguration.BaseTest;
+import com.selenium.app.baseConfiguration.ConfigReader;
 import com.selenium.app.utility.CustomUtils;
 import com.selenium.app.utility.Data;
 import com.selenium.app.utility.TestUtils;
@@ -15,6 +16,8 @@ public class HomePageTest extends BaseTest {
     HomePage homePage;
     TestUtils testUtils;
     CustomUtils customUtils;
+    ConfigReader configReader;
+
 
     @BeforeClass
     public void setupTest() {
@@ -22,6 +25,7 @@ public class HomePageTest extends BaseTest {
         homePage = new HomePage(driver);
         testUtils = new TestUtils(driver);
         customUtils= new CustomUtils(driver);
+        configReader = new ConfigReader();
 
     }
 
@@ -47,9 +51,9 @@ public class HomePageTest extends BaseTest {
     @Test(testName = "Test_01_01", description = "Validating Url")
     public void Test_01_01() {
 
-        homePage.visit(Data.HOME_PAGE);
+        homePage.visit(configReader.getAppURL());
 //        customUtils.checkingLinks(); This code will check all the links to find any broken links available on the page.
-        homePage.validatingUrl(Data.HOME_PAGE);
+        homePage.validatingUrl(configReader.getAppURL());
         homePage.assertingTitle(Data.PAGE_TITLE);
         homePage.enteringTextOnSearBox(Data.IPHONE);
         homePage.clickingTheSearchButton();
