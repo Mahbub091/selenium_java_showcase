@@ -13,8 +13,8 @@
 
             <class name="com.selenium.app.Tests.RegisterUserTest">
                 <methods>
-                    <exclude name="Test_02_01" />
-                    <exclude name="Test_02_02" />
+                    <include name="Test_02_01" />
+                    <include name="Test_02_02" />
                 </methods>
             </class>
         </classes>
