@@ -2,25 +2,21 @@ package com.selenium.app.POM;
 
 import com.selenium.app.utility.Data;
 import com.selenium.app.utility.TestUtils;
-import org.openqa.selenium.By;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
-import org.apache.logging.log4j.*;
-
-import java.io.IOException;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-
-
 public class HomePage {
+    int time_out_max = 60;
+    int time_out_min = 30;
+    int pause_normal = 1;
+    int pause_long = 2;
+    int pause_extended = 3;
+
     private WebDriver driver;
     private TestUtils testUtils;
     Logger log = LogManager.getLogger("HomePage");
@@ -68,6 +64,25 @@ public class HomePage {
     @FindBy(xpath = "//div[@id='widget-navbar-217834']/ul/li[6]/ul//a[@href='https://ecommerce-playground.lambdatest.io/index.php?route=account/login']//span[@class='title']")
     WebElement loginMenu;
 
+    @FindBy(xpath = "//div[@class=\"dropdown\"]//ul[@class=\"dropdown-menu autocomplete w-100\"]")
+    WebElement homepageSearchBarSuggestions;
+    @FindBy(xpath = "//select[@name=\"category_id\"]")
+    WebElement categorySection;
+
+    @FindBy(xpath = "//div[@class=\"col-sm-5 mb-3\"]//input[@name=\"search\"]")
+    WebElement searchBoxInCategorySection;
+
+    @FindBy(xpath = "//div[@class=\"col-sm-3 mb-3\"]//input[@type=\"button\"]")
+    WebElement newSearchButton;
+
+    @FindBy(xpath = "//select[@id=\"input-limit-212463\"]")
+    WebElement productShowCount;
+
+    @FindBy(xpath = "//select[@id=\"input-sort-212464\"]")
+    WebElement sortBy;
+
+
+
     /**
      * We'll define the methods here.
      */
@@ -91,11 +106,10 @@ public class HomePage {
         log.info("Validating Title to Have: " + expectedTitle);
     }
 
-    public void enteringTextOnSearBox() {
-        log.info("Enter Text On SearchBox: " + Data.RandomTech);
+    public void enteringTextOnSearBox(String text) {
         try {
-            testUtils.waitForElementVisibility(searchBox, 30);
-            testUtils.enteringText(searchBox, Data.RandomTech);
+            testUtils.waitForElementVisibility(searchBox, time_out_min);
+            testUtils.enteringText(searchBox, text);
         } catch (Exception exception) {
             exception.printStackTrace();
         }
@@ -104,9 +118,9 @@ public class HomePage {
     public void clickingTheSearchButton() {
         try {
             searchButton.isDisplayed();
-            testUtils.waitForElementIsClickable(searchBox, 90);
+            testUtils.waitForElementIsClickable(searchBox, time_out_max);
             searchButton.click();
-            testUtils.wait(1);
+            testUtils.wait(pause_normal);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -149,9 +163,9 @@ public class HomePage {
 
     public void clickOnMyAccountButton() {
         try {
-            testUtils.waitForElementVisibility(myAccountMenu, 90);
+            testUtils.waitForElementVisibility(myAccountMenu, time_out_max);
             testUtils.mouseHoverUsingJs(myAccountMenu);
-            testUtils.waitForElementVisibility(loginMenu, 30);
+            testUtils.waitForElementVisibility(loginMenu, time_out_min);
             testUtils.clickingElement(loginMenu);
 
         } catch (Exception e) {
@@ -159,40 +173,56 @@ public class HomePage {
         }
     }
 
-    /**
-     * This Function Will Validate All The Links On Your Current Page
-     */
-
-    public void checkingLinks() {
-        String url = "";
-        HttpURLConnection huc = null;
-        int respCode = 200;
-        List<WebElement> links = driver.findElements(By.tagName("a"));
-        Iterator<WebElement> it = links.iterator();
-        while (it.hasNext()) {
-            url = it.next().getAttribute("href");
-              log.info(url);
-            if (url == null || url.isEmpty()) {
-                continue;
-            }
-
-            try {
-                huc = (HttpURLConnection) (new URL(url).openConnection());
-                huc.setRequestMethod("HEAD");
-                huc.connect();
-                respCode = huc.getResponseCode();
-                if (respCode >= 400) {
-                    log.info(url + " is a broken link & Response code is: " + respCode);
-                } else {
-                    log.info(url+" is a valid link & Responded: " + respCode);
-                }
-            } catch (MalformedURLException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-
-
+    public void selectingCategoryByText(){
+        testUtils.waitForElementVisibility(categorySection, time_out_max);
+        testUtils.selectDropDownByVisibleText(categorySection, Data.DESKTOP);
+        testUtils.wait(pause_normal);
+        testUtils.selectDropDownByVisibleText(categorySection, Data.LAPTOPS);
+        testUtils.selectDropDownByVisibleText(categorySection, Data.COMPONENTS);
+        testUtils.selectDropDownByVisibleText(categorySection, Data.Tablets);
+        testUtils.selectDropDownByVisibleText(categorySection, Data.Software);
+        testUtils.selectDropDownByVisibleText(categorySection, Data.PhonesPdas);
+        testUtils.selectDropDownByVisibleText(categorySection, Data.Cameras);
+        testUtils.selectDropDownByVisibleText(categorySection, Data.MP3Players);
     }
+
+    public void searchNewProduct(String text){
+        testUtils.waitForElementVisibility(searchBoxInCategorySection, time_out_min);
+        testUtils.clearTextBox(searchBoxInCategorySection);
+        testUtils.enteringText(searchBoxInCategorySection, text);
+        testUtils.waitForElementVisibility(newSearchButton, time_out_min);
+        testUtils.clickingElement(newSearchButton);
+        testUtils.wait(pause_extended);
+    }
+
+    public void selectingDifferentCountOnProductDropdown(){
+        testUtils.waitForElementVisibility(productShowCount, time_out_max);
+        testUtils.selectDropDownByVisibleText(productShowCount, "25");
+        testUtils.selectDropDownByVisibleText(productShowCount, "50");
+        testUtils.selectDropDownByVisibleText(productShowCount, "75");
+        testUtils.selectDropDownByVisibleText(productShowCount, "100");
+    }
+
+    public void checkingAllProducts(){
+        testUtils.clearTextBox(searchBox);
+        testUtils.clickingElement(searchButton);
+    }
+
+    public void selectingSortBy(){
+        testUtils.selectDropDownByVisibleText(sortBy, "Best sellers");
+        testUtils.selectDropDownByVisibleText(sortBy, "Popular");
+        testUtils.selectDropDownByVisibleText(sortBy, "Newest");
+        testUtils.selectDropDownByVisibleText(sortBy, "Name (A - Z)");
+        testUtils.selectDropDownByVisibleText(sortBy, "Name (Z - A)");
+        testUtils.selectDropDownByVisibleText(sortBy, "Price (Low > High)");
+        testUtils.selectDropDownByVisibleText(sortBy, "Price (High > Low)");
+        testUtils.selectDropDownByVisibleText(sortBy, "Rating (Highest)");
+        testUtils.selectDropDownByVisibleText(sortBy, "Rating (Lowest)");
+        testUtils.selectDropDownByVisibleText(sortBy, "Model (A - Z)");
+        testUtils.selectDropDownByVisibleText(sortBy, "Model (Z - A)");
+        testUtils.selectDropDownByVisibleText(sortBy, "Default");
+    }
+
+
+
 }

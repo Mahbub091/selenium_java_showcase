@@ -2,7 +2,9 @@ package com.selenium.app.Tests;
 
 import com.selenium.app.POM.HomePage;
 import com.selenium.app.baseConfiguration.BaseTest;
+import com.selenium.app.utility.CustomUtils;
 import com.selenium.app.utility.Data;
+import com.selenium.app.utility.TestUtils;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -11,11 +13,16 @@ public class HomePageTest extends BaseTest {
     private WebDriver driver;
 
     HomePage homePage;
+    TestUtils testUtils;
+    CustomUtils customUtils;
 
     @BeforeClass
     public void setupTest() {
         this.driver = driverManager.getDriver();
         homePage = new HomePage(driver);
+        testUtils = new TestUtils(driver);
+        customUtils= new CustomUtils(driver);
+
     }
 
     /**
@@ -41,17 +48,25 @@ public class HomePageTest extends BaseTest {
     public void Test_01_01() {
 
         homePage.visit(Data.HOME_PAGE);
-//        homePage.checkingLinks(); TODO: Uncomment this line to check the broken links on the current page.
+//        customUtils.checkingLinks(); This code will check all the links to find any broken links available on the page.
         homePage.validatingUrl(Data.HOME_PAGE);
         homePage.assertingTitle(Data.PAGE_TITLE);
-        homePage.menuCheck();
-        homePage.clickOnMyAccountButton();
+        homePage.enteringTextOnSearBox(Data.IPHONE);
+        homePage.clickingTheSearchButton();
+        homePage.selectingCategoryByText();
+        homePage.searchNewProduct("apple");
+        homePage.selectingDifferentCountOnProductDropdown();
+        homePage.checkingAllProducts();
+        homePage.selectingSortBy();
+        testUtils.wait(3);
+
     }
 
     @Test(testName = "Test_01_02", description = "Random")
     public void Test_01_02(){
+        homePage.menuCheck();
+        homePage.clickOnMyAccountButton();
         HomePage homePage = new HomePage(driver);
-        homePage.enteringTextOnSearBox();
         homePage.clickingTheSearchButton();
     }
 }

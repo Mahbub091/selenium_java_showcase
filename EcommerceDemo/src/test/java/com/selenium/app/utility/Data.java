@@ -44,6 +44,20 @@ public class Data {
      */
     public static final String PAGE_TITLE = "Your Store";
 
+    /**
+     *  This Section will store Static Data that We're USing During HomePageTest.
+     */
+    public static final String IPHONE = "iPhone";
+
+    public static final String DESKTOP = "Desktops";
+    public static final String LAPTOPS = "Laptops";
+    public static final String COMPONENTS = "Components";
+    public static final String Tablets = "Tablets";
+    public static final String Software = "Software";
+    public static final String PhonesPdas = "Phones & PDAs";
+    public static final String Cameras = "Cameras";
+    public static final String MP3Players = "MP3 Players";
+
 
 
 
