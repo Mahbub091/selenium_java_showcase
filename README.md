@@ -16,3 +16,17 @@
 </div>
 
 This repo will contain Selenium Automation with Java &amp; TestNG along with CI/CD on Github Actions for showcase purposes.
+
+For checking the codes and test run of this suite please follow the below process:
+➡ Clone This Repo by running `git clone {Repo HTTPS/SSH code}`
+➡ Now open `Terminal` from your IDE. I'm using Intellij Idea
+➡ Run the following Codes for test suite execution on `testSuite.xml` file
+                    💠 mvn clean
+                    💠 mvn compile
+                    💠 mvn clean test
+
+For Now this project has only the `Surefire Report` that you can find on `target` folder at Base Directory
+
+`ExtentReport` reporting will be introduced ASAP
+
+

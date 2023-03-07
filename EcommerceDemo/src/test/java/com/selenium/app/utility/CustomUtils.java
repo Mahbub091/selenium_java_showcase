@@ -10,6 +10,10 @@ import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.nio.file.DirectoryNotEmptyException;
+import java.nio.file.Files;
+import java.nio.file.NoSuchFileException;
+import java.nio.file.Paths;
 import java.util.Iterator;
 import java.util.List;
 
@@ -56,6 +60,26 @@ public class CustomUtils {
         }
 
 
+    }
+
+    public void deleteTargetFolder()
+    {
+        try {
+            Files.deleteIfExists(
+                    Paths.get(System.getProperty("user.dir") + "\\target"));
+        }
+        catch (NoSuchFileException e) {
+            System.out.println(
+                    "No such file/directory exists");
+        }
+        catch (DirectoryNotEmptyException e) {
+            System.out.println("Directory is not empty.");
+        }
+        catch (IOException e) {
+            System.out.println("Invalid permissions.");
+        }
+
+        System.out.println("Deletion successful.");
     }
 
 

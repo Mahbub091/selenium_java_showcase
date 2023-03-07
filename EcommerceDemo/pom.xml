@@ -14,8 +14,16 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>11</maven.compiler.source>
     <maven.compiler.target>11</maven.compiler.target>
-    <log4jcore.version>2.19.0</log4jcore.version>
-    <log4japi.version>2.19.0</log4japi.version>
+    <junit.version>3.8.1</junit.version>
+    <selenium.version>4.6.0</selenium.version>
+    <testng.version>7.7.0</testng.version>
+    <javafaker.version>0.15</javafaker.version>
+    <commons.version>2.11.0</commons.version>
+    <log4jcore.version>2.17.2</log4jcore.version>
+    <log4japi.version>2.17.2</log4japi.version>
+    <mavenembedder.version>3.6.3</mavenembedder.version>
+
+
   </properties>
 
 
@@ -23,55 +31,56 @@
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>3.8.1</version>
+      <version>${junit.version}</version>
       <scope>test</scope>
     </dependency>
     <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
     <dependency>
       <groupId>org.seleniumhq.selenium</groupId>
       <artifactId>selenium-java</artifactId>
-      <version>4.6.0</version>
+      <version>${selenium.version}</version>
     </dependency>
     <!-- https://mvnrepository.com/artifact/org.testng/testng -->
     <dependency>
       <groupId>org.testng</groupId>
       <artifactId>testng</artifactId>
-      <version>7.7.0</version>
+      <version>${testng.version}</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>com.github.javafaker</groupId>
       <artifactId>javafaker</artifactId>
-      <version>0.15</version>
+      <version>${javafaker.version}</version>
     </dependency>
     <!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
     <dependency>
       <groupId>commons-io</groupId>
       <artifactId>commons-io</artifactId>
-      <version>2.11.0</version>
+      <version>${commons.version}</version>
     </dependency>
     <!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->
     <dependency>
       <groupId>org.apache.logging.log4j</groupId>
       <artifactId>log4j-core</artifactId>
-      <version>2.17.2</version>
+      <version>${log4jcore.version}</version>
     </dependency>
     <!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-api -->
     <dependency>
       <groupId>org.apache.logging.log4j</groupId>
       <artifactId>log4j-api</artifactId>
-      <version>2.17.2</version>
+      <version>${log4japi.version}</version>
     </dependency>
     <dependency>
       <groupId>org.apache.maven</groupId>
       <artifactId>maven-embedder</artifactId>
-      <version>3.6.3</version>
+      <version>${mavenembedder.version}</version>
     </dependency>
     <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-simple</artifactId>
       <version>1.7.30</version>
     </dependency>
+
     <dependency>
       <groupId>org.apache.maven</groupId>
       <artifactId>maven-compat</artifactId>
@@ -84,9 +93,10 @@
       <plugins>
         <!-- Compiler plug-in -->
         <plugin>
+          <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-compiler-plugin -->
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-compiler-plugin</artifactId>
-          <version>3.6.0</version>
+          <version>3.10.1</version>
           <configuration>
             <fork>true</fork>
             <source>1.7</source>
@@ -95,14 +105,35 @@
         </plugin>
         <!-- Below plug-in is used to execute tests -->
         <plugin>
+          <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-surefire-plugin -->
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-surefire-plugin</artifactId>
-          <version>2.19.1</version>
+          <version>3.0.0-M5</version>
           <configuration>
             <suiteXmlFiles>
               <!-- TestNG suite XML files -->
               <suiteXmlFile>testSuite.xml</suiteXmlFile>
             </suiteXmlFiles>
+          </configuration>
+        </plugin>
+        <plugin>
+          <artifactId>maven-clean-plugin</artifactId>
+          <version>3.2.0</version>
+          <configuration>
+            <filesets>
+              <fileset>
+                <directory>${basedir}/target</directory>
+                <includes>
+                  <include>**/*.tmp</include>
+                  <include>**/*.log</include>
+                </includes>
+                <excludes>
+                  <exclude>**/important.log</exclude>
+                  <exclude>**/another-important.log</exclude>
+                </excludes>
+                <followSymlinks>false</followSymlinks>
+              </fileset>
+            </filesets>
           </configuration>
         </plugin>
       </plugins>

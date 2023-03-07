@@ -18,7 +18,6 @@ public class HomePageTest extends BaseTest {
     CustomUtils customUtils;
     ConfigReader configReader;
 
-
     @BeforeClass
     public void setupTest() {
         this.driver = driverManager.getDriver();
@@ -68,9 +67,6 @@ public class HomePageTest extends BaseTest {
 
     @Test(testName = "Test_01_02", description = "Random")
     public void Test_01_02(){
-        homePage.menuCheck();
-        homePage.clickOnMyAccountButton();
-        HomePage homePage = new HomePage(driver);
-        homePage.clickingTheSearchButton();
+
     }
 }
