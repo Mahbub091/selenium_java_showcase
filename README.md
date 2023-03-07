@@ -14,18 +14,18 @@
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 </div>
 
- <p>This repo will contain Selenium Automation with Java &amp; TestNG along with CI/CD on Github Actions for showcase purposes.</p> 
+ -This repo will contain Selenium Automation with Java &amp; TestNG along with CI/CD on Github Actions for showcase purposes.
 
-<P>For checking the codes and test run of this suite please follow the below process:</p>
-<P>➡ Clone This Repo by running `git clone {Repo HTTPS/SSH code}`</p>
-<P>➡ Now open `Terminal` from your IDE. I'm using Intellij Idea</p>
-<P>➡ Run the following Codes for test suite execution on `testSuite.xml` file</p>
-                    💠 mvn clean</p>
-                    💠 mvn compile</p>
-                    💠 mvn clean test</p>
+-For checking the codes and test run of this suite please follow the below process:
+-➡ Clone This Repo by running `git clone {Repo HTTPS/SSH code}`
+-➡ Now open `Terminal` from your IDE. I'm using `Intellij Idea`
+-➡ Run the following Codes for test suite execution on `testSuite.xml` file
+-                   💠 mvn clean
+-                  💠 mvn compile
+-                    💠 mvn clean test
 
-<P>For Now this project has only the `Surefire Report` that you can find on `target` folder at Base Directory</p>
+-For Now this project has only the `Surefire Report` that you can find on `target` folder at Base Directory
 
-<P>`ExtentReport` reporting will be introduced ASAP</p>
+-`ExtentReport` reporting will be introduced ASAP
 
 
