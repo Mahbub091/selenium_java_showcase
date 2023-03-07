@@ -14,7 +14,7 @@
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 </div>
 
- -This repo will contain Selenium Automation with Java &amp; TestNG along with CI/CD on Github Actions for showcase purposes.
+- This repo will contain `Selenium Automation` with `Java` &amp; `TestNG` along with CI/CD on `Github Actions` for showcase purposes.
 
 - For checking the codes and test run of this suite please follow the below process:
 
