@@ -2,6 +2,7 @@ package com.selenium.app.resources;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
@@ -34,7 +35,10 @@ public class DriverPoolManager {
     }
 
     private void createChromeDriver() {
-        driver = new ChromeDriver();
+                        // TODO: Created this Patch for the issue of *403* with Chrome 111 Version. Needs To be deleted Once It's been resolved.
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--remote-allow-origins=*");
+        driver = new ChromeDriver(options);
     }
 
     public void stopDriver() {
