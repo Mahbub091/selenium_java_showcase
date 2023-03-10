@@ -7,7 +7,7 @@ import java.util.Properties;
 public class ConfigReader {
     Properties properties;
     String baseDir = System.getProperty("user.dir");
-    String path = baseDir + "\\src\\test\\java\\com\\selenium\\app\\baseConfiguration\\config.properties";
+    String path = baseDir + "/src/test/java/com/selenium/app/baseConfiguration/config.properties";
     public ConfigReader(){
         properties = new Properties();
         try{
