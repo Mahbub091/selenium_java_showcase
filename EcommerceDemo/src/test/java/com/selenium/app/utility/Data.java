@@ -11,6 +11,7 @@ public class Data {
 
     public static final String TestStart = "******************* Starting Test *******************";
     public static final String TestComplete = "******************* Test Execution Completed *******************";
+    public static final String Log_Design = "****** :::";
 
 
     /**

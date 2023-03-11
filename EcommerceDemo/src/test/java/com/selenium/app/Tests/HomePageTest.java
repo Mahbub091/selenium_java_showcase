@@ -25,29 +25,9 @@ public class HomePageTest extends BaseTest {
         testUtils = new TestUtils(driver);
         customUtils= new CustomUtils(driver);
         configReader = new ConfigReader();
-
     }
 
-    /**
-     * Go to ecommerce-playground.lambdatest.io
-     * Type "iphone"
-     * Click on iPhone…
-     * Click on All Categories…
-     * Click on SEARCH
-     * Drag highlighted button
-     * Type "apple"
-     * Click on SEARCH
-     * Click on Search Criteria
-     * Click on All Categories
-     * Click on 25 from Show:
-     * Click on Best sellers from Sort By:
-     * Click on MacBook Pro
-     * Click on Apple Cinema 30&quot;
-     * Click on Apple Cinema 30"
-     *
-     */
-
-    @Test(testName = "Test_01_01", description = "Validating Url")
+    @Test(testName = "Test_01_01", description = "Searching For Desired Product")
     public void Test_01_01() {
 
         homePage.visit(configReader.getAppURL());
@@ -62,11 +42,6 @@ public class HomePageTest extends BaseTest {
         homePage.checkingAllProducts();
         homePage.selectingSortBy();
         testUtils.wait(3);
-
-    }
-
-    @Test(testName = "Test_01_02", description = "Random")
-    public void Test_01_02(){
 
     }
 }

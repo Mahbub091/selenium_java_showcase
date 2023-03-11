@@ -5,6 +5,7 @@ import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 
 import java.io.IOException;
 import java.net.HttpURLConnection;
@@ -14,11 +15,13 @@ import java.nio.file.DirectoryNotEmptyException;
 import java.nio.file.Files;
 import java.nio.file.NoSuchFileException;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+
 public class CustomUtils {
-    private WebDriver driver;
+    WebDriver driver;
     Logger log = LogManager.getLogger("CustomUtils");
 
     public CustomUtils(WebDriver driver) {
@@ -58,8 +61,6 @@ public class CustomUtils {
                 e.printStackTrace();
             }
         }
-
-
     }
 
     public void deleteTargetFolder()
@@ -82,7 +83,33 @@ public class CustomUtils {
         System.out.println("Deletion successful.");
     }
 
+    public void validatingMultipleMenus(){
+        List<String> expectedElementText = new ArrayList<String>();
+        expectedElementText.add("Edit your account information");
+        expectedElementText.add("Change your password");
+        expectedElementText.add("Modify your address book entries");
+        expectedElementText.add("Modify your wish list");
+        expectedElementText.add("Subscribe / unsubscribe to newsletter");
+        try {
+        List<WebElement> elementList = driver.findElements(By.xpath("/html//div[@id='content']/div[1]/div[@class='card-body text-center']/div[@class='row']/div"));
+        List<String> strlist  = WebelementToString(elementList);
+        Assert.assertEquals(strlist, expectedElementText);
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+}
+    public static List<String> WebelementToString(List<WebElement> elementList){
+        List<String> stringList = new ArrayList<String>();
+        for (WebElement element : elementList ) {
+            stringList.add(element.getText().toString().trim());
+        }
+        return stringList;
+    }
+
 
 
 
 }
+
+
+

@@ -27,6 +27,6 @@
 
 - For Now this project has only the `Surefire Report` that you can find on `target` folder at `Base Directory`
 
-- `ExtentReport` reporting will be introduced ASAP
+- Using `Allure Report` for reporting of this project.
 
 
