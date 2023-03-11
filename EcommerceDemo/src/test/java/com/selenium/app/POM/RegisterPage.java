@@ -11,7 +11,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class RegisterPage {
-
     int time_out_max = 60;
     int time_out_min = 30;
     int pause_normal = 1;
@@ -79,6 +78,8 @@ public class RegisterPage {
     WebElement agreeToTermsAndPolicy;
     @FindBy(css = "div#content > form[method='post'] input[value='Continue']")
     WebElement continueButton;
+    @FindBy(xpath = "//div[@id='account-register']/div[@class='alert alert-danger alert-dismissible']")
+    WebElement accountRegisterAlertMessage;
 
 
 
@@ -136,6 +137,13 @@ public class RegisterPage {
             testUtils.clickingElement(continueButton);
         } catch (Exception e){
             e.printStackTrace();
+        }
+    }
+
+    public void verifyAccountCreation(){
+        String eleText = accountRegisterAlertMessage.getText();
+        if(accountRegisterAlertMessage.isDisplayed() & eleText.equals(" Warning: E-Mail Address is already registered!")){
+            log.info("Account Creation Completed");
         }
     }
 

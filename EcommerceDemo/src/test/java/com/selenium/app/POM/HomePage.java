@@ -87,15 +87,21 @@ public class HomePage {
      * We'll define the methods here.
      */
 
+    /**
+     * @param navigate
+     */
     public void visit(String navigate) {
+        log.info("Navigating to: [{}]", navigate );
         try {
             driver.navigate().to(navigate);
         } catch (Exception e) {
             e.printStackTrace();
         }
-        log.info("Navigating to " + navigate);
     }
 
+    /**
+     * @param expectedTitle
+     */
     public void assertingTitle(String expectedTitle) {
         try {
             String title = driver.getTitle();
@@ -103,7 +109,7 @@ public class HomePage {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        log.info("Validating Title to Have: " + expectedTitle);
+        log.info("Validating Title to Have: [{}]", expectedTitle);
     }
 
     public void enteringTextOnSearBox(String text) {
@@ -222,6 +228,15 @@ public class HomePage {
         testUtils.selectDropDownByVisibleText(sortBy, "Model (Z - A)");
         testUtils.selectDropDownByVisibleText(sortBy, "Default");
     }
+
+    public void hoverAndClickOnLoginMenu() {
+        testUtils.waitForElementVisibility(myAccountMenu, time_out_max);
+        testUtils.waitForElementIsClickable(myAccountMenu, time_out_min);
+        testUtils.mouseHoverUsingJs(myAccountMenu);
+        testUtils.waitForElementVisibility(loginMenu, time_out_max);
+        testUtils.clickingElement(loginMenu);
+    }
+
 
 
 

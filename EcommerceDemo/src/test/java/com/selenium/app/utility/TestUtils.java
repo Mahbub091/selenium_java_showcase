@@ -172,8 +172,36 @@ public class TestUtils {
         log.info("Cleared text for : [{}]", element);
         highlightWebElement(element);
         element.clear();
+    }
 
+    /**
+     * It will give the text present in element.
+     *
+     * @return element's text value
+     */
+    public String getText(WebElement element) {
+        highlightWebElement(element);
+        String elementText = element.getText();
+        log.info("Text found for : [{}] is : [{}]", element, elementText);
 
+        return elementText;
+    }
+
+    /**
+     * It will get the HREF attribute from the element and cross Validate it
+     * @param element
+     * @param value
+     */
+    public void validatingHrefOfElement(WebElement element, String value) {
+        log.info("Cleared text for : [{}]", element);
+        try{
+            String href = element.getAttribute("href");
+            if (href.equals(value)){
+                log.info(element + Data.Log_Design + "href Value Matches The Expected Value Of: " + value);
+            }
+        } catch(Exception e){
+            e.printStackTrace();
+        }
     }
 
 
