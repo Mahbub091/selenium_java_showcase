@@ -60,6 +60,38 @@ public class ConfigReader {
             throw new RuntimeException("Account Page URL Not Specified In Config File");
     }
 
+    public String homePageURL(){
+        String home_page_url = properties.getProperty("HOME_PAGE");
+        if (home_page_url != null)
+            return home_page_url;
+        else
+            throw new RuntimeException("HOME PAGE URL Not Specified In Config File");
+    }
+
+    public String blogPageURL(){
+        String blog_Page_URL = properties.getProperty("BLOG_PAGE");
+        if (blog_Page_URL != null)
+            return blog_Page_URL;
+        else
+            throw new RuntimeException("Blog Page URL Not Specified In Config File");
+    }
+
+    public String specialPageURL(){
+        String special_Page_URL = properties.getProperty("SPECIAL_PAGE");
+        if (special_Page_URL != null)
+            return special_Page_URL;
+        else
+            throw new RuntimeException("Special Page URL Not Specified In Config File");
+    }
+
+    public String megaMenuPageURL(){
+        String megaMenu_Page_URL = properties.getProperty("MEGA_MENU");
+        if (megaMenu_Page_URL != null)
+            return megaMenu_Page_URL;
+        else
+            throw new RuntimeException("Mega Menu Page URL Not Specified In Config File");
+    }
+
     public String loginUser(){
         String loginUser = properties.getProperty("User_Name");
         if (loginUser != null)
