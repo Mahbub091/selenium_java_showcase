@@ -20,13 +20,14 @@ public class MyAccountPage {
     WebDriver driver;
     TestUtils testUtils;
     ConfigReader configReader;
-
     CustomUtils customUtils;
+    HomePage homePage;
     Logger log = LogManager.getLogger("MyAccountPage");
 
     public MyAccountPage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
+        homePage = new HomePage(driver);
         testUtils = new TestUtils(driver);
         configReader = new ConfigReader();
         customUtils = new CustomUtils(driver);
@@ -58,12 +59,6 @@ public class MyAccountPage {
     WebElement myAccountOptions;
 
 
-
-
-
-
-
-
     /**
      * We'll define the methods here.
      */
@@ -79,7 +74,6 @@ public class MyAccountPage {
     }
 
     public void loginToRegisteredAccount() {
-
         testUtils.waitForElementVisibility(accountEmailAddress, time_out_max);
         testUtils.waitForElementVisibility(accountPassword, time_out_max);
         testUtils.waitForElementVisibility(loginButton, time_out_min);
@@ -98,23 +92,4 @@ public class MyAccountPage {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    public void test(){
-
-    }
 }

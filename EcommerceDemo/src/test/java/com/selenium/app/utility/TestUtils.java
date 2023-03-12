@@ -14,10 +14,8 @@ import org.testng.Assert;
 import java.time.Duration;
 
 public class TestUtils {
-
-    private WebDriver driver;
+    WebDriver driver;
     Logger log = LogManager.getLogger("TestUtils");
-
     public TestUtils(WebDriver driver) {
         this.driver = driver;
     }
@@ -25,23 +23,30 @@ public class TestUtils {
     /**
      * It will Log your Texts on Terminal.
      */
-
     public void terminalLog(String logText) {
         System.out.println(logText);
     }
 
     /**
      * It will highlight the web element
-     *
      * @param element
      */
     public void highlightWebElement(WebElement element) {
-        ((JavascriptExecutor) driver).executeScript(
-                "arguments[0].setAttribute('style', 'background:#ffffb3; border:3px solid green;');", element);
+        try{
+            ((JavascriptExecutor) driver).executeScript(
+                    "arguments[0].setAttribute('style', 'background:#ffffb3; border:3px solid green;');", element);
+        }
+        catch(Exception exception){
+            exception.printStackTrace();
+        }
     }
 
+    /**
+     * It will highlight the web element
+     * @param seconds
+     */
     public void wait(int seconds) {
-        log.info("Test Paused For: " + seconds + " Seconds");
+        log.info("Test Paused : [{}] Seconds", seconds);
         try {
             Thread.sleep(seconds * 1000);
         } catch (InterruptedException e) {
@@ -57,7 +62,6 @@ public class TestUtils {
     public void clickingElement(WebElement element){
         log.info("Clicking On Element: [{}]", element);
         try {
-            this.terminalLog("Clicking On: " + element);
             element.click();
         }catch(Exception exception){
             exception.printStackTrace();
@@ -93,10 +97,17 @@ public class TestUtils {
      */
     public void mouseHover(WebElement elementToHover) {
         log.info("Hovering to: [{}]", elementToHover);
-        Actions hover = new Actions(driver);
-        hover.moveToElement(elementToHover);
-        hover.build();
-        hover.perform();
+        try
+        {
+            Actions hover = new Actions(driver);
+            hover.moveToElement(elementToHover);
+            hover.build();
+            hover.perform();
+        }
+        catch(Exception exception){
+            exception.printStackTrace();
+        }
+
     }
 
     /**
@@ -120,8 +131,14 @@ public class TestUtils {
      */
     public void mouseHoverUsingJs(WebElement elementToHover) {
         log.info("Hovering Using JS: [{}]", elementToHover);
-        String mouseOverScript = "if(document.createEvent){var evObj = document.createEvent('MouseEvents');evObj.initEvent('mouseover', true, false); arguments[0].dispatchEvent(evObj);}else if(document.createEventObject){ arguments[0].fireEvent('onmouseover');}";
-        ((JavascriptExecutor) driver).executeScript(mouseOverScript, elementToHover);
+        try
+        {
+            String mouseOverScript = "if(document.createEvent){var evObj = document.createEvent('MouseEvents');evObj.initEvent('mouseover', true, false); arguments[0].dispatchEvent(evObj);}else if(document.createEventObject){ arguments[0].fireEvent('onmouseover');}";
+            ((JavascriptExecutor) driver).executeScript(mouseOverScript, elementToHover);
+        }
+        catch(Exception exception){
+            exception.printStackTrace();
+        }
     }
 
     /**
@@ -160,8 +177,12 @@ public class TestUtils {
      */
     public void selectDropDownByVisibleText(WebElement element, String visibleText) {
         log.info("Selecting visibleText [{}] from dropdown, element : [{}]", visibleText, element);
-        Select select = new Select(element);
-        select.selectByVisibleText(visibleText);
+        try {
+            Select select = new Select(element);
+            select.selectByVisibleText(visibleText);
+        } catch (Exception e){
+            e.printStackTrace();
+        }
     }
 
     /**
@@ -170,8 +191,12 @@ public class TestUtils {
      */
     public void clearTextBox(WebElement element) {
         log.info("Cleared text for : [{}]", element);
-        highlightWebElement(element);
-        element.clear();
+        try {
+            highlightWebElement(element);
+            element.clear();
+        } catch (Exception e){
+            e.printStackTrace();
+        }
     }
 
     /**
@@ -203,6 +228,4 @@ public class TestUtils {
             e.printStackTrace();
         }
     }
-
-
 }

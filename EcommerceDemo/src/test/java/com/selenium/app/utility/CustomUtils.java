@@ -63,6 +63,32 @@ public class CustomUtils {
         }
     }
 
+    /**
+     * This Function Will convert our webelements to strings
+     */
+    private static List<String> WebelementToString(List<WebElement> elementList){
+        List<String> stringList = new ArrayList<String>();
+        for (WebElement element : elementList ) {
+            stringList.add(element.getText().toString().trim());
+        }
+        return stringList;
+    }
+
+    /**
+     * This Function Will store our Webelements and then click our desired MenuItem
+     * @param element2List
+     * @param menuItem
+     */
+    private void clickElementMatchingTextMethod(List <WebElement> element2List, String menuItem) {
+        try {
+            element2List.stream().parallel()
+                    .filter(e->e.getText().equalsIgnoreCase(menuItem))
+                    .findFirst() // if element finds several element then it'll fetch the first element
+                    .ifPresent(WebElement::click);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
     public void deleteTargetFolder()
     {
         try {
@@ -83,6 +109,9 @@ public class CustomUtils {
         System.out.println("Deletion successful.");
     }
 
+    /**
+     * This Function Will Multiple Menus at Once By Using Array List & WebElements
+     */
     public void validatingMultipleMenus(){
         List<String> expectedElementText = new ArrayList<String>();
         expectedElementText.add("Edit your account information");
@@ -98,16 +127,76 @@ public class CustomUtils {
         e.printStackTrace();
     }
 }
-    public static List<String> WebelementToString(List<WebElement> elementList){
-        List<String> stringList = new ArrayList<String>();
-        for (WebElement element : elementList ) {
-            stringList.add(element.getText().toString().trim());
+
+    public void validatingTopCategoriesMenu(){
+        List<String> topCategoriesElementText = new ArrayList<String>();
+        topCategoriesElementText.add("Components");
+        topCategoriesElementText.add("Cameras");
+        topCategoriesElementText.add("Phone, Tablets & Ipod");
+        topCategoriesElementText.add("Software");
+        topCategoriesElementText.add("MP3 Players");
+        topCategoriesElementText.add("Laptops & Notebooks");
+        topCategoriesElementText.add("Desktops and Monitors");
+        topCategoriesElementText.add("Printers & Scanners");
+        topCategoriesElementText.add("Mice and Trackballs");
+        topCategoriesElementText.add("Fashion and Accessories");
+        topCategoriesElementText.add("Beauty and Saloon");
+        topCategoriesElementText.add("Autoparts and Accessories");
+        topCategoriesElementText.add("Washing machine");
+        topCategoriesElementText.add("Gaming consoles");
+        topCategoriesElementText.add("Air conditioner");
+        topCategoriesElementText.add("Web Cameras");
+        try {
+            List<WebElement> elementList = driver.findElements(By.cssSelector("[id='widget-navbar-217841'] .nav-item .title"));
+            List<String> strlist  = WebelementToString(elementList);
+            System.out.println(strlist);
+            Assert.assertEquals(strlist, topCategoriesElementText);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-        return stringList;
     }
-
-
-
+    /**
+     * This Function Will store our Webelements and then click our desired MenuItem
+     * @param menuText
+     */
+    public void clickingElementBySortingOutFromHeaderMenuList(String menuText) {
+        log.info("Click on [{}] from Header-Menu", menuText);
+        List<WebElement> elementList = driver.findElements(By.cssSelector("div#widget-navbar-217834 > .horizontal.navbar-nav > li > .both.icon-left.nav-link > .info > .title"));
+        clickElementMatchingTextMethod(elementList, menuText);
+    }
+    /**
+     * This Function will Validate the User Menu after the user has logged in
+     */
+    public void checkingUserMenuItem() {
+        List<String> userMenuList = new ArrayList<String>();
+        userMenuList.add("My Account");
+        userMenuList.add("Edit Account");
+        userMenuList.add("Password");
+        userMenuList.add("Address Book");
+        userMenuList.add("Wish List");
+        userMenuList.add("Notification");
+        userMenuList.add("Order History");
+        userMenuList.add("Downloads");
+        userMenuList.add("Recurring payments");
+        userMenuList.add("Reward Points");
+        userMenuList.add("Returns");
+        userMenuList.add("Transactions");
+        userMenuList.add("Newsletter");
+        userMenuList.add("Logout");
+        try {
+            List<WebElement> elementList = driver.findElements(By.xpath("//div[@class=\"list-group mb-3\"]/a"));
+            List<String> strlist  = WebelementToString(elementList);
+            System.out.println(strlist);
+            Assert.assertEquals(strlist, userMenuList);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    public void clickingElementBySortingOutFromUserMenu(String menuText) {
+        log.info("Click on [{}] from User Menu", menuText);
+        List<WebElement> elementList = driver.findElements(By.xpath("//div[@class=\"list-group mb-3\"]/a"));
+        clickElementMatchingTextMethod(elementList, menuText);
+    }
 
 }
 

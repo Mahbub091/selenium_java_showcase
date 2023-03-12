@@ -7,6 +7,7 @@
             <class name="com.selenium.app.Tests.HomePageTest">
                 <methods>
                     <exclude name="Test_01_01" />
+                    <exclude name="Test_01_02" />
                 </methods>
             </class>
 

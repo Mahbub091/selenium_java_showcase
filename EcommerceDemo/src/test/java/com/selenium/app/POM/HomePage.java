@@ -1,5 +1,6 @@
 package com.selenium.app.POM;
 
+import com.selenium.app.utility.CustomUtils;
 import com.selenium.app.utility.Data;
 import com.selenium.app.utility.TestUtils;
 import org.apache.logging.log4j.LogManager;
@@ -17,14 +18,16 @@ public class HomePage {
     int pause_long = 2;
     int pause_extended = 3;
 
-    private WebDriver driver;
-    private TestUtils testUtils;
+    WebDriver driver;
+    TestUtils testUtils;
+    CustomUtils customUtils;
     Logger log = LogManager.getLogger("HomePage");
 
     public HomePage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
         testUtils = new TestUtils(driver);
+        customUtils = new CustomUtils(driver);
     }
 
     /**
@@ -80,6 +83,12 @@ public class HomePage {
 
     @FindBy(xpath = "//select[@id=\"input-sort-212464\"]")
     WebElement sortBy;
+
+    @FindBy(xpath = "//div[@id='entry_217832']/a[@role='button']")
+    WebElement topCategoriesSideMenu;
+
+    @FindBy(xpath = "//div[@id='mz-component-1626147655']//a[@href='#mz-component-1626147655']")
+    WebElement topCategoriesCloseButton;
 
 
 
@@ -235,6 +244,19 @@ public class HomePage {
         testUtils.mouseHoverUsingJs(myAccountMenu);
         testUtils.waitForElementVisibility(loginMenu, time_out_max);
         testUtils.clickingElement(loginMenu);
+    }
+
+    public void hoverAndClickOnTopCategoriesSideMenu() {
+        testUtils.waitForElementVisibility(topCategoriesSideMenu, time_out_max);
+        testUtils.mouseHoverUsingJs(topCategoriesSideMenu);
+        testUtils.waitForElementIsClickable(topCategoriesSideMenu, time_out_min);
+        testUtils.clickingElement(topCategoriesSideMenu);
+    }
+
+    public void closingTopCategoriesSection() {
+        testUtils.waitForElementVisibility(topCategoriesCloseButton, time_out_max);
+        testUtils.waitForElementIsClickable(topCategoriesCloseButton, time_out_max);
+        testUtils.clickingElement(topCategoriesCloseButton);
     }
 
 

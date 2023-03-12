@@ -9,7 +9,7 @@ public class Data {
      *  This Section will store test execution codes.
      */
 
-    public static final String TestStart = "******************* Starting Test *******************";
+    public static final String TestStart = "******************* Test Execution Started *******************";
     public static final String TestComplete = "******************* Test Execution Completed *******************";
     public static final String Log_Design = "****** :::";
 
