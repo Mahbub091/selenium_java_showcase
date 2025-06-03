@@ -1,0 +1,168 @@
+17:40:40.898 [main]INFO  HomePage - Navigating to: [https://ecommerce-playground.lambdatest.io/]
+17:40:45.424 [main]INFO  HomePage - Validating URL: https://ecommerce-playground.lambdatest.io/
+17:40:45.429 [main]INFO  HomePage - Validating Title to Have: [Your Store]
+17:40:45.451 [main]INFO  HomePage - Validating: Home Is Equal Home
+17:40:45.466 [main]INFO  HomePage - Validating: Special Is Equal Special
+17:40:45.480 [main]INFO  HomePage - Validating: Hot Is Equal Hot
+17:40:45.494 [main]INFO  HomePage - Validating: Blog Is Equal Blog
+17:40:45.541 [main]INFO  HomePage - Validating: Mega Menu Is Equal Mega Menu
+17:40:45.561 [main]INFO  HomePage - Validating: AddOns Is Equal AddOns
+17:40:45.584 [main]INFO  HomePage - Validating: Featured Is Equal Featured
+17:40:45.608 [main]INFO  HomePage - Validating: My account Is Equal My account
+17:40:45.617 [main]INFO  TestUtils - Waiting for [60] seconds on Visibility of [[[ChromeDriver: chrome on windows (5f2638a759fc81635272b4da153fb16a)] -> xpath: //ul[@class="navbar-nav horizontal"]//li//a[contains(@href,'https://ecommerce-playground.lambdatest.io/index.php?route=account/account')]]]
+17:40:45.712 [main]INFO  TestUtils - Hovering Using JS: [[[ChromeDriver: chrome on windows (5f2638a759fc81635272b4da153fb16a)] -> xpath: //ul[@class="navbar-nav horizontal"]//li//a[contains(@href,'https://ecommerce-playground.lambdatest.io/index.php?route=account/account')]]]
+17:40:45.772 [main]INFO  TestUtils - Waiting for [30] seconds on Visibility of [[[ChromeDriver: chrome on windows (5f2638a759fc81635272b4da153fb16a)] -> xpath: //div[@id='widget-navbar-217834']/ul/li[6]/ul//a[@href='https://ecommerce-playground.lambdatest.io/index.php?route=account/login']//span[@class='title']]]
+17:40:45.799 [main]INFO  TestUtils - Clicking On Element: [[[ChromeDriver: chrome on windows (5f2638a759fc81635272b4da153fb16a)] -> xpath: //div[@id='widget-navbar-217834']/ul/li[6]/ul//a[@href='https://ecommerce-playground.lambdatest.io/index.php?route=account/login']//span[@class='title']]]
+17:40:48.004 [main]INFO  TestUtils - Waiting for [60] seconds on Visibility of [[[ChromeDriver: chrome on windows (5f2638a759fc81635272b4da153fb16a)] -> xpath: /html//div[@id='content']/div/div[1]/div[@class='card mb-4']/div[@class='card-body p-4']]]
+17:40:48.026 [main]INFO  TestUtils - Waiting for [30] seconds on Visibility of [[[ChromeDriver: chrome on windows (5f2638a759fc81635272b4da153fb16a)] -> xpath: /html//div[@id='content']/div[@class='row']//a[@href='https://ecommerce-playground.lambdatest.io/index.php?route=account/register']]]
+17:40:48.046 [main]INFO  TestUtils - Waiting For Element [[[ChromeDriver: chrome on windows (5f2638a759fc81635272b4da153fb16a)] -> xpath: /html//div[@id='content']/div[@class='row']//a[@href='https://ecommerce-playground.lambdatest.io/index.php?route=account/register']]] Is Clickable within [30] Seconds 
+17:40:48.084 [main]INFO  TestUtils - Clicking On Element: [[[ChromeDriver: chrome on windows (5f2638a759fc81635272b4da153fb16a)] -> xpath: /html//div[@id='content']/div[@class='row']//a[@href='https://ecommerce-playground.lambdatest.io/index.php?route=account/register']]]
+17:40:50.831 [main]INFO  TestUtils - Validating URL: https://ecommerce-playground.lambdatest.io/index.php?route=account/register
+17:40:50.844 [main]INFO  TestUtils - Expecting Text [Login] from element: [[[ChromeDriver: chrome on windows (5f2638a759fc81635272b4da153fb16a)] -> css selector: [class] .list-group-item:nth-of-type(1)]]
+17:40:50.863 [main]INFO  TestUtils - Expecting Text [Register] from element: [[[ChromeDriver: chrome on windows (5f2638a759fc81635272b4da153fb16a)] -> css selector: [class] .list-group-item:nth-of-type(2)]]
+17:40:50.882 [main]INFO  TestUtils - Expecting Text [Forgotten Password] from element: [[[ChromeDriver: chrome on windows (5f2638a759fc81635272b4da153fb16a)] -> css selector: [class] .list-group-item:nth-of-type(3)]]
+17:40:50.900 [main]INFO  TestUtils - Expecting Text [My Account] from element: [[[ChromeDriver: chrome on windows (5f2638a759fc81635272b4da153fb16a)] -> css selector: [class] .list-group-item:nth-of-type(4)]]
+17:40:50.922 [main]INFO  TestUtils - Expecting Text [Address Book] from element: [[[ChromeDriver: chrome on windows (5f2638a759fc81635272b4da153fb16a)] -> css selector: [class] .list-group-item:nth-of-type(5)]]
+17:40:50.941 [main]INFO  TestUtils - Expecting Text [Wish List] from element: [[[ChromeDriver: chrome on windows (5f2638a759fc81635272b4da153fb16a)] -> css selector: [class] .list-group-item:nth-of-type(6)]]
+17:40:50.960 [main]INFO  TestUtils - Expecting Text [Order History] from element: [[[ChromeDriver: chrome on windows (5f2638a759fc81635272b4da153fb16a)] -> css selector: [class] .list-group-item:nth-of-type(7)]]
+17:40:50.980 [main]INFO  TestUtils - Expecting Text [Recurring payments] from element: [[[ChromeDriver: chrome on windows (5f2638a759fc81635272b4da153fb16a)] -> css selector: [class] .list-group-item:nth-of-type(9)]]
+17:40:51.000 [main]INFO  TestUtils - Expecting Text [Reward Points] from element: [[[ChromeDriver: chrome on windows (5f2638a759fc81635272b4da153fb16a)] -> css selector: [class] .list-group-item:nth-of-type(10)]]
+17:40:51.019 [main]INFO  TestUtils - Expecting Text [Returns] from element: [[[ChromeDriver: chrome on windows (5f2638a759fc81635272b4da153fb16a)] -> css selector: [class] .list-group-item:nth-of-type(11)]]
+17:40:51.042 [main]INFO  TestUtils - Expecting Text [Transactions] from element: [[[ChromeDriver: chrome on windows (5f2638a759fc81635272b4da153fb16a)] -> css selector: [class] .list-group-item:nth-of-type(12)]]
+17:40:51.064 [main]INFO  TestUtils - Expecting Text [Downloads] from element: [[[ChromeDriver: chrome on windows (5f2638a759fc81635272b4da153fb16a)] -> css selector: [class] .list-group-item:nth-of-type(8)]]
+17:40:51.088 [main]INFO  TestUtils - Expecting Text [Newsletter] from element: [[[ChromeDriver: chrome on windows (5f2638a759fc81635272b4da153fb16a)] -> css selector: [class] .list-group-item:nth-of-type(13)]]
+17:40:51.099 [main]INFO  RegisterPage - Entering Details On Register Menu
+17:40:51.109 [main]INFO  TestUtils - Waiting for [30] seconds on Visibility of [[[ChromeDriver: chrome on windows (5f2638a759fc81635272b4da153fb16a)] -> xpath: /html//input[@id='input-firstname']]]
+17:40:51.131 [main]INFO  TestUtils - Entering text for element: [[[ChromeDriver: chrome on windows (5f2638a759fc81635272b4da153fb16a)] -> xpath: /html//input[@id='input-firstname']]] Text is :[MAHBUB]
+17:40:51.208 [main]INFO  TestUtils - Waiting for [30] seconds on Visibility of [[[ChromeDriver: chrome on windows (5f2638a759fc81635272b4da153fb16a)] -> xpath: /html//input[@id='input-lastname']]]
+17:40:51.234 [main]INFO  TestUtils - Entering text for element: [[[ChromeDriver: chrome on windows (5f2638a759fc81635272b4da153fb16a)] -> xpath: /html//input[@id='input-lastname']]] Text is :[TOM]
+17:40:51.312 [main]INFO  TestUtils - Waiting for [30] seconds on Visibility of [[[ChromeDriver: chrome on windows (5f2638a759fc81635272b4da153fb16a)] -> xpath: /html//input[@id='input-email']]]
+17:40:51.334 [main]INFO  TestUtils - Entering text for element: [[[ChromeDriver: chrome on windows (5f2638a759fc81635272b4da153fb16a)] -> xpath: /html//input[@id='input-email']]] Text is :[mahbubasr091@gmail.com]
+17:40:51.420 [main]INFO  TestUtils - Waiting for [30] seconds on Visibility of [[[ChromeDriver: chrome on windows (5f2638a759fc81635272b4da153fb16a)] -> xpath: /html//input[@id='input-telephone']]]
+17:40:51.443 [main]INFO  TestUtils - Entering text for element: [[[ChromeDriver: chrome on windows (5f2638a759fc81635272b4da153fb16a)] -> xpath: /html//input[@id='input-telephone']]] Text is :[+8882319324876921]
+17:40:51.534 [main]INFO  TestUtils - Waiting for [30] seconds on Visibility of [[[ChromeDriver: chrome on windows (5f2638a759fc81635272b4da153fb16a)] -> xpath: /html//input[@id='input-password']]]
+17:40:51.584 [main]INFO  TestUtils - Entering text for element: [[[ChromeDriver: chrome on windows (5f2638a759fc81635272b4da153fb16a)] -> xpath: /html//input[@id='input-password']]] Text is :[1234567889]
+17:40:51.676 [main]INFO  TestUtils - Waiting for [30] seconds on Visibility of [[[ChromeDriver: chrome on windows (5f2638a759fc81635272b4da153fb16a)] -> xpath: /html//input[@id='input-confirm']]]
+17:40:51.704 [main]INFO  TestUtils - Entering text for element: [[[ChromeDriver: chrome on windows (5f2638a759fc81635272b4da153fb16a)] -> xpath: /html//input[@id='input-confirm']]] Text is :[1234567889]
+17:40:51.803 [main]INFO  TestUtils - Waiting For Element [[[ChromeDriver: chrome on windows (5f2638a759fc81635272b4da153fb16a)] -> css selector: [for='input-agree']]] Is Clickable within [30] Seconds 
+17:40:51.843 [main]INFO  TestUtils - Clicking On Element: [[[ChromeDriver: chrome on windows (5f2638a759fc81635272b4da153fb16a)] -> css selector: [for='input-agree']]]
+17:40:51.899 [main]INFO  TestUtils - Clicking On Element: [[[ChromeDriver: chrome on windows (5f2638a759fc81635272b4da153fb16a)] -> css selector: div#content > form[method='post'] input[value='Continue']]]
+17:40:52.615 [main]INFO  TestUtils - Waiting for [60] seconds on Visibility of [[[ChromeDriver: chrome on windows (5f2638a759fc81635272b4da153fb16a)] -> xpath: //ul[@class="navbar-nav horizontal"]//li//a[contains(@href,'https://ecommerce-playground.lambdatest.io/index.php?route=account/account')]]]
+17:40:52.632 [main]INFO  TestUtils - Waiting For Element [[[ChromeDriver: chrome on windows (5f2638a759fc81635272b4da153fb16a)] -> xpath: //ul[@class="navbar-nav horizontal"]//li//a[contains(@href,'https://ecommerce-playground.lambdatest.io/index.php?route=account/account')]]] Is Clickable within [30] Seconds 
+17:40:52.662 [main]INFO  TestUtils - Hovering Using JS: [[[ChromeDriver: chrome on windows (5f2638a759fc81635272b4da153fb16a)] -> xpath: //ul[@class="navbar-nav horizontal"]//li//a[contains(@href,'https://ecommerce-playground.lambdatest.io/index.php?route=account/account')]]]
+17:40:52.692 [main]INFO  TestUtils - Waiting for [60] seconds on Visibility of [[[ChromeDriver: chrome on windows (5f2638a759fc81635272b4da153fb16a)] -> xpath: //div[@id='widget-navbar-217834']/ul/li[6]/ul//a[@href='https://ecommerce-playground.lambdatest.io/index.php?route=account/login']//span[@class='title']]]
+17:40:52.714 [main]INFO  TestUtils - Clicking On Element: [[[ChromeDriver: chrome on windows (5f2638a759fc81635272b4da153fb16a)] -> xpath: //div[@id='widget-navbar-217834']/ul/li[6]/ul//a[@href='https://ecommerce-playground.lambdatest.io/index.php?route=account/login']//span[@class='title']]]
+17:40:53.569 [main]INFO  HomePage - Validating URL: https://ecommerce-playground.lambdatest.io/index.php?route=account/login
+17:40:53.579 [main]INFO  TestUtils - Waiting for [60] seconds on Visibility of [[[ChromeDriver: chrome on windows (5f2638a759fc81635272b4da153fb16a)] -> xpath: /html//div[@id='content']/div/div[1]/div[@class='card mb-4']/div[@class='card-body p-4']]]
+17:40:53.607 [main]INFO  TestUtils - Waiting for [30] seconds on Visibility of [[[ChromeDriver: chrome on windows (5f2638a759fc81635272b4da153fb16a)] -> xpath: /html//div[@id='content']/div[@class='row']//form[@action='https://ecommerce-playground.lambdatest.io/index.php?route=account/login']]]
+17:40:53.627 [main]INFO  TestUtils - Cleared text for : [[[ChromeDriver: chrome on windows (5f2638a759fc81635272b4da153fb16a)] -> xpath: /html//div[@id='content']/div[@class='row']//a[@href='https://ecommerce-playground.lambdatest.io/index.php?route=account/register']]]
+17:40:53.651 [main]INFO  TestUtils - [[ChromeDriver: chrome on windows (5f2638a759fc81635272b4da153fb16a)] -> xpath: /html//div[@id='content']/div[@class='row']//a[@href='https://ecommerce-playground.lambdatest.io/index.php?route=account/register']]****** :::href Value Matches The Expected Value Of: https://ecommerce-playground.lambdatest.io/index.php?route=account/register
+17:40:53.658 [main]INFO  TestUtils - Waiting for [60] seconds on Visibility of [[[ChromeDriver: chrome on windows (5f2638a759fc81635272b4da153fb16a)] -> xpath: /html//input[@id='input-email']]]
+17:40:53.679 [main]INFO  TestUtils - Waiting for [60] seconds on Visibility of [[[ChromeDriver: chrome on windows (5f2638a759fc81635272b4da153fb16a)] -> xpath: /html//input[@id='input-password']]]
+17:40:53.702 [main]INFO  TestUtils - Waiting for [30] seconds on Visibility of [[[ChromeDriver: chrome on windows (5f2638a759fc81635272b4da153fb16a)] -> xpath: /html//div[@id='content']//form[@action='https://ecommerce-playground.lambdatest.io/index.php?route=account/login']/input[@value='Login']]]
+17:40:53.723 [main]INFO  TestUtils - Cleared text for : [[[ChromeDriver: chrome on windows (5f2638a759fc81635272b4da153fb16a)] -> xpath: /html//input[@id='input-email']]]
+17:40:53.773 [main]INFO  TestUtils - Entering text for element: [[[ChromeDriver: chrome on windows (5f2638a759fc81635272b4da153fb16a)] -> xpath: /html//input[@id='input-email']]] Text is :[mahbubasr091@gmail.com]
+17:40:53.861 [main]INFO  TestUtils - Cleared text for : [[[ChromeDriver: chrome on windows (5f2638a759fc81635272b4da153fb16a)] -> xpath: /html//input[@id='input-password']]]
+17:40:53.913 [main]INFO  TestUtils - Entering text for element: [[[ChromeDriver: chrome on windows (5f2638a759fc81635272b4da153fb16a)] -> xpath: /html//input[@id='input-password']]] Text is :[1234567889]
+17:40:53.984 [main]INFO  TestUtils - Clicking On Element: [[[ChromeDriver: chrome on windows (5f2638a759fc81635272b4da153fb16a)] -> xpath: /html//div[@id='content']//form[@action='https://ecommerce-playground.lambdatest.io/index.php?route=account/login']/input[@value='Login']]]
+17:40:58.644 [main]INFO  TestUtils - Test Paused : [1] Seconds
+17:40:59.649 [main]INFO  TestUtils - Validating URL: https://ecommerce-playground.lambdatest.io/index.php?route=account/account
+17:40:59.910 [main]INFO  CustomUtils - Click on [My Account] from User Menu
+17:41:00.476 [main]INFO  CustomUtils - Click on [Edit Account] from User Menu
+17:41:04.144 [main]INFO  CustomUtils - Click on [Password] from User Menu
+17:41:06.003 [main]INFO  CustomUtils - Click on [Address Book] from User Menu
+17:41:07.379 [main]INFO  CustomUtils - Click on [Wish List] from User Menu
+17:41:08.474 [main]INFO  CustomUtils - Click on [Notification] from User Menu
+17:41:13.463 [main]INFO  CustomUtils - Click on [Order History] from User Menu
+17:41:13.470 [main]INFO  CustomUtils - Click on [Downloads] from User Menu
+17:41:13.475 [main]INFO  CustomUtils - Click on [Recurring payments] from User Menu
+17:41:13.480 [main]INFO  CustomUtils - Click on [Reward Points] from User Menu
+17:41:13.484 [main]INFO  CustomUtils - Click on [Returns] from User Menu
+17:41:13.489 [main]INFO  CustomUtils - Click on [Transactions] from User Menu
+17:41:13.494 [main]INFO  CustomUtils - Click on [Newsletter] from User Menu
+17:41:13.499 [main]INFO  CustomUtils - Click on [Logout] from User Menu
+17:41:13.503 [main]INFO  TestUtils - Test Paused : [2] Seconds
+17:42:42.695 [main]INFO  HomePage - Navigating to: [https://ecommerce-playground.lambdatest.io/]
+17:42:46.091 [main]INFO  HomePage - Validating URL: https://ecommerce-playground.lambdatest.io/
+17:42:46.097 [main]INFO  HomePage - Validating Title to Have: [Your Store]
+17:42:46.117 [main]INFO  HomePage - Validating: Home Is Equal Home
+17:42:46.131 [main]INFO  HomePage - Validating: Special Is Equal Special
+17:42:46.145 [main]INFO  HomePage - Validating: Hot Is Equal Hot
+17:42:46.165 [main]INFO  HomePage - Validating: Blog Is Equal Blog
+17:42:46.179 [main]INFO  HomePage - Validating: Mega Menu Is Equal Mega Menu
+17:42:46.199 [main]INFO  HomePage - Validating: AddOns Is Equal AddOns
+17:42:46.215 [main]INFO  HomePage - Validating: Featured Is Equal Featured
+17:42:46.233 [main]INFO  HomePage - Validating: My account Is Equal My account
+17:42:46.240 [main]INFO  TestUtils - Waiting for [60] seconds on Visibility of [[[ChromeDriver: chrome on windows (9d70b3bb50332339dbed7357ee8e2ae9)] -> xpath: //ul[@class="navbar-nav horizontal"]//li//a[contains(@href,'https://ecommerce-playground.lambdatest.io/index.php?route=account/account')]]]
+17:42:46.273 [main]INFO  TestUtils - Hovering Using JS: [[[ChromeDriver: chrome on windows (9d70b3bb50332339dbed7357ee8e2ae9)] -> xpath: //ul[@class="navbar-nav horizontal"]//li//a[contains(@href,'https://ecommerce-playground.lambdatest.io/index.php?route=account/account')]]]
+17:42:46.336 [main]INFO  TestUtils - Waiting for [30] seconds on Visibility of [[[ChromeDriver: chrome on windows (9d70b3bb50332339dbed7357ee8e2ae9)] -> xpath: //div[@id='widget-navbar-217834']/ul/li[6]/ul//a[@href='https://ecommerce-playground.lambdatest.io/index.php?route=account/login']//span[@class='title']]]
+17:42:46.360 [main]INFO  TestUtils - Clicking On Element: [[[ChromeDriver: chrome on windows (9d70b3bb50332339dbed7357ee8e2ae9)] -> xpath: //div[@id='widget-navbar-217834']/ul/li[6]/ul//a[@href='https://ecommerce-playground.lambdatest.io/index.php?route=account/login']//span[@class='title']]]
+17:42:48.387 [main]INFO  TestUtils - Waiting for [60] seconds on Visibility of [[[ChromeDriver: chrome on windows (9d70b3bb50332339dbed7357ee8e2ae9)] -> xpath: /html//div[@id='content']/div/div[1]/div[@class='card mb-4']/div[@class='card-body p-4']]]
+17:42:48.415 [main]INFO  TestUtils - Waiting for [30] seconds on Visibility of [[[ChromeDriver: chrome on windows (9d70b3bb50332339dbed7357ee8e2ae9)] -> xpath: /html//div[@id='content']/div[@class='row']//a[@href='https://ecommerce-playground.lambdatest.io/index.php?route=account/register']]]
+17:42:48.436 [main]INFO  TestUtils - Waiting For Element [[[ChromeDriver: chrome on windows (9d70b3bb50332339dbed7357ee8e2ae9)] -> xpath: /html//div[@id='content']/div[@class='row']//a[@href='https://ecommerce-playground.lambdatest.io/index.php?route=account/register']]] Is Clickable within [30] Seconds 
+17:42:48.469 [main]INFO  TestUtils - Clicking On Element: [[[ChromeDriver: chrome on windows (9d70b3bb50332339dbed7357ee8e2ae9)] -> xpath: /html//div[@id='content']/div[@class='row']//a[@href='https://ecommerce-playground.lambdatest.io/index.php?route=account/register']]]
+17:42:50.456 [main]INFO  TestUtils - Validating URL: https://ecommerce-playground.lambdatest.io/index.php?route=account/register
+17:42:50.471 [main]INFO  TestUtils - Expecting Text [Login] from element: [[[ChromeDriver: chrome on windows (9d70b3bb50332339dbed7357ee8e2ae9)] -> css selector: [class] .list-group-item:nth-of-type(1)]]
+17:42:50.490 [main]INFO  TestUtils - Expecting Text [Register] from element: [[[ChromeDriver: chrome on windows (9d70b3bb50332339dbed7357ee8e2ae9)] -> css selector: [class] .list-group-item:nth-of-type(2)]]
+17:42:50.509 [main]INFO  TestUtils - Expecting Text [Forgotten Password] from element: [[[ChromeDriver: chrome on windows (9d70b3bb50332339dbed7357ee8e2ae9)] -> css selector: [class] .list-group-item:nth-of-type(3)]]
+17:42:50.527 [main]INFO  TestUtils - Expecting Text [My Account] from element: [[[ChromeDriver: chrome on windows (9d70b3bb50332339dbed7357ee8e2ae9)] -> css selector: [class] .list-group-item:nth-of-type(4)]]
+17:42:50.546 [main]INFO  TestUtils - Expecting Text [Address Book] from element: [[[ChromeDriver: chrome on windows (9d70b3bb50332339dbed7357ee8e2ae9)] -> css selector: [class] .list-group-item:nth-of-type(5)]]
+17:42:50.567 [main]INFO  TestUtils - Expecting Text [Wish List] from element: [[[ChromeDriver: chrome on windows (9d70b3bb50332339dbed7357ee8e2ae9)] -> css selector: [class] .list-group-item:nth-of-type(6)]]
+17:42:50.598 [main]INFO  TestUtils - Expecting Text [Order History] from element: [[[ChromeDriver: chrome on windows (9d70b3bb50332339dbed7357ee8e2ae9)] -> css selector: [class] .list-group-item:nth-of-type(7)]]
+17:42:50.618 [main]INFO  TestUtils - Expecting Text [Recurring payments] from element: [[[ChromeDriver: chrome on windows (9d70b3bb50332339dbed7357ee8e2ae9)] -> css selector: [class] .list-group-item:nth-of-type(9)]]
+17:42:50.638 [main]INFO  TestUtils - Expecting Text [Reward Points] from element: [[[ChromeDriver: chrome on windows (9d70b3bb50332339dbed7357ee8e2ae9)] -> css selector: [class] .list-group-item:nth-of-type(10)]]
+17:42:50.658 [main]INFO  TestUtils - Expecting Text [Returns] from element: [[[ChromeDriver: chrome on windows (9d70b3bb50332339dbed7357ee8e2ae9)] -> css selector: [class] .list-group-item:nth-of-type(11)]]
+17:42:50.677 [main]INFO  TestUtils - Expecting Text [Transactions] from element: [[[ChromeDriver: chrome on windows (9d70b3bb50332339dbed7357ee8e2ae9)] -> css selector: [class] .list-group-item:nth-of-type(12)]]
+17:42:50.712 [main]INFO  TestUtils - Expecting Text [Downloads] from element: [[[ChromeDriver: chrome on windows (9d70b3bb50332339dbed7357ee8e2ae9)] -> css selector: [class] .list-group-item:nth-of-type(8)]]
+17:42:50.733 [main]INFO  TestUtils - Expecting Text [Newsletter] from element: [[[ChromeDriver: chrome on windows (9d70b3bb50332339dbed7357ee8e2ae9)] -> css selector: [class] .list-group-item:nth-of-type(13)]]
+17:42:50.744 [main]INFO  RegisterPage - Entering Details On Register Menu
+17:42:50.752 [main]INFO  TestUtils - Waiting for [30] seconds on Visibility of [[[ChromeDriver: chrome on windows (9d70b3bb50332339dbed7357ee8e2ae9)] -> xpath: /html//input[@id='input-firstname']]]
+17:42:50.769 [main]INFO  TestUtils - Entering text for element: [[[ChromeDriver: chrome on windows (9d70b3bb50332339dbed7357ee8e2ae9)] -> xpath: /html//input[@id='input-firstname']]] Text is :[MAHBUB]
+17:42:50.833 [main]INFO  TestUtils - Waiting for [30] seconds on Visibility of [[[ChromeDriver: chrome on windows (9d70b3bb50332339dbed7357ee8e2ae9)] -> xpath: /html//input[@id='input-lastname']]]
+17:42:50.857 [main]INFO  TestUtils - Entering text for element: [[[ChromeDriver: chrome on windows (9d70b3bb50332339dbed7357ee8e2ae9)] -> xpath: /html//input[@id='input-lastname']]] Text is :[TOM]
+17:42:50.925 [main]INFO  TestUtils - Waiting for [30] seconds on Visibility of [[[ChromeDriver: chrome on windows (9d70b3bb50332339dbed7357ee8e2ae9)] -> xpath: /html//input[@id='input-email']]]
+17:42:50.944 [main]INFO  TestUtils - Entering text for element: [[[ChromeDriver: chrome on windows (9d70b3bb50332339dbed7357ee8e2ae9)] -> xpath: /html//input[@id='input-email']]] Text is :[mahbubasr091@gmail.com]
+17:42:51.024 [main]INFO  TestUtils - Waiting for [30] seconds on Visibility of [[[ChromeDriver: chrome on windows (9d70b3bb50332339dbed7357ee8e2ae9)] -> xpath: /html//input[@id='input-telephone']]]
+17:42:51.049 [main]INFO  TestUtils - Entering text for element: [[[ChromeDriver: chrome on windows (9d70b3bb50332339dbed7357ee8e2ae9)] -> xpath: /html//input[@id='input-telephone']]] Text is :[+8882319324876921]
+17:42:51.131 [main]INFO  TestUtils - Waiting for [30] seconds on Visibility of [[[ChromeDriver: chrome on windows (9d70b3bb50332339dbed7357ee8e2ae9)] -> xpath: /html//input[@id='input-password']]]
+17:42:51.153 [main]INFO  TestUtils - Entering text for element: [[[ChromeDriver: chrome on windows (9d70b3bb50332339dbed7357ee8e2ae9)] -> xpath: /html//input[@id='input-password']]] Text is :[1234567889]
+17:42:51.227 [main]INFO  TestUtils - Waiting for [30] seconds on Visibility of [[[ChromeDriver: chrome on windows (9d70b3bb50332339dbed7357ee8e2ae9)] -> xpath: /html//input[@id='input-confirm']]]
+17:42:51.251 [main]INFO  TestUtils - Entering text for element: [[[ChromeDriver: chrome on windows (9d70b3bb50332339dbed7357ee8e2ae9)] -> xpath: /html//input[@id='input-confirm']]] Text is :[1234567889]
+17:42:51.324 [main]INFO  TestUtils - Waiting For Element [[[ChromeDriver: chrome on windows (9d70b3bb50332339dbed7357ee8e2ae9)] -> css selector: [for='input-agree']]] Is Clickable within [30] Seconds 
+17:42:51.355 [main]INFO  TestUtils - Clicking On Element: [[[ChromeDriver: chrome on windows (9d70b3bb50332339dbed7357ee8e2ae9)] -> css selector: [for='input-agree']]]
+17:42:51.421 [main]INFO  TestUtils - Clicking On Element: [[[ChromeDriver: chrome on windows (9d70b3bb50332339dbed7357ee8e2ae9)] -> css selector: div#content > form[method='post'] input[value='Continue']]]
+17:42:52.069 [main]INFO  TestUtils - Waiting for [60] seconds on Visibility of [[[ChromeDriver: chrome on windows (9d70b3bb50332339dbed7357ee8e2ae9)] -> xpath: //ul[@class="navbar-nav horizontal"]//li//a[contains(@href,'https://ecommerce-playground.lambdatest.io/index.php?route=account/account')]]]
+17:42:52.101 [main]INFO  TestUtils - Waiting For Element [[[ChromeDriver: chrome on windows (9d70b3bb50332339dbed7357ee8e2ae9)] -> xpath: //ul[@class="navbar-nav horizontal"]//li//a[contains(@href,'https://ecommerce-playground.lambdatest.io/index.php?route=account/account')]]] Is Clickable within [30] Seconds 
+17:42:52.129 [main]INFO  TestUtils - Hovering Using JS: [[[ChromeDriver: chrome on windows (9d70b3bb50332339dbed7357ee8e2ae9)] -> xpath: //ul[@class="navbar-nav horizontal"]//li//a[contains(@href,'https://ecommerce-playground.lambdatest.io/index.php?route=account/account')]]]
+17:42:52.153 [main]INFO  TestUtils - Waiting for [60] seconds on Visibility of [[[ChromeDriver: chrome on windows (9d70b3bb50332339dbed7357ee8e2ae9)] -> xpath: //div[@id='widget-navbar-217834']/ul/li[6]/ul//a[@href='https://ecommerce-playground.lambdatest.io/index.php?route=account/login']//span[@class='title']]]
+17:42:52.171 [main]INFO  TestUtils - Clicking On Element: [[[ChromeDriver: chrome on windows (9d70b3bb50332339dbed7357ee8e2ae9)] -> xpath: //div[@id='widget-navbar-217834']/ul/li[6]/ul//a[@href='https://ecommerce-playground.lambdatest.io/index.php?route=account/login']//span[@class='title']]]
+17:42:52.683 [main]INFO  HomePage - Validating URL: https://ecommerce-playground.lambdatest.io/index.php?route=account/login
+17:42:52.694 [main]INFO  TestUtils - Waiting for [60] seconds on Visibility of [[[ChromeDriver: chrome on windows (9d70b3bb50332339dbed7357ee8e2ae9)] -> xpath: /html//div[@id='content']/div/div[1]/div[@class='card mb-4']/div[@class='card-body p-4']]]
+17:42:52.716 [main]INFO  TestUtils - Waiting for [30] seconds on Visibility of [[[ChromeDriver: chrome on windows (9d70b3bb50332339dbed7357ee8e2ae9)] -> xpath: /html//div[@id='content']/div[@class='row']//form[@action='https://ecommerce-playground.lambdatest.io/index.php?route=account/login']]]
+17:42:52.733 [main]INFO  TestUtils - Cleared text for : [[[ChromeDriver: chrome on windows (9d70b3bb50332339dbed7357ee8e2ae9)] -> xpath: /html//div[@id='content']/div[@class='row']//a[@href='https://ecommerce-playground.lambdatest.io/index.php?route=account/register']]]
+17:42:52.753 [main]INFO  TestUtils - [[ChromeDriver: chrome on windows (9d70b3bb50332339dbed7357ee8e2ae9)] -> xpath: /html//div[@id='content']/div[@class='row']//a[@href='https://ecommerce-playground.lambdatest.io/index.php?route=account/register']]****** :::href Value Matches The Expected Value Of: https://ecommerce-playground.lambdatest.io/index.php?route=account/register
+17:42:52.759 [main]INFO  TestUtils - Waiting for [60] seconds on Visibility of [[[ChromeDriver: chrome on windows (9d70b3bb50332339dbed7357ee8e2ae9)] -> xpath: /html//input[@id='input-email']]]
+17:42:52.777 [main]INFO  TestUtils - Waiting for [60] seconds on Visibility of [[[ChromeDriver: chrome on windows (9d70b3bb50332339dbed7357ee8e2ae9)] -> xpath: /html//input[@id='input-password']]]
+17:42:52.796 [main]INFO  TestUtils - Waiting for [30] seconds on Visibility of [[[ChromeDriver: chrome on windows (9d70b3bb50332339dbed7357ee8e2ae9)] -> xpath: /html//div[@id='content']//form[@action='https://ecommerce-playground.lambdatest.io/index.php?route=account/login']/input[@value='Login']]]
+17:42:52.814 [main]INFO  TestUtils - Cleared text for : [[[ChromeDriver: chrome on windows (9d70b3bb50332339dbed7357ee8e2ae9)] -> xpath: /html//input[@id='input-email']]]
+17:42:52.854 [main]INFO  TestUtils - Entering text for element: [[[ChromeDriver: chrome on windows (9d70b3bb50332339dbed7357ee8e2ae9)] -> xpath: /html//input[@id='input-email']]] Text is :[mahbubasr091@gmail.com]
+17:42:52.921 [main]INFO  TestUtils - Cleared text for : [[[ChromeDriver: chrome on windows (9d70b3bb50332339dbed7357ee8e2ae9)] -> xpath: /html//input[@id='input-password']]]
+17:42:52.964 [main]INFO  TestUtils - Entering text for element: [[[ChromeDriver: chrome on windows (9d70b3bb50332339dbed7357ee8e2ae9)] -> xpath: /html//input[@id='input-password']]] Text is :[1234567889]
+17:42:53.038 [main]INFO  TestUtils - Clicking On Element: [[[ChromeDriver: chrome on windows (9d70b3bb50332339dbed7357ee8e2ae9)] -> xpath: /html//div[@id='content']//form[@action='https://ecommerce-playground.lambdatest.io/index.php?route=account/login']/input[@value='Login']]]
+17:42:54.704 [main]INFO  TestUtils - Test Paused : [1] Seconds
+17:42:55.717 [main]INFO  TestUtils - Validating URL: https://ecommerce-playground.lambdatest.io/index.php?route=account/account
+17:42:55.843 [main]INFO  CustomUtils - Click on [My Account] from User Menu
+17:42:55.951 [main]INFO  CustomUtils - Click on [Edit Account] from User Menu
+17:42:56.043 [main]INFO  CustomUtils - Click on [Password] from User Menu
+17:42:56.145 [main]INFO  CustomUtils - Click on [Address Book] from User Menu
+17:42:56.254 [main]INFO  CustomUtils - Click on [Wish List] from User Menu
+17:42:56.374 [main]INFO  CustomUtils - Click on [Notification] from User Menu
+17:42:56.505 [main]INFO  CustomUtils - Click on [Order History] from User Menu
+17:42:56.632 [main]INFO  CustomUtils - Click on [Downloads] from User Menu
+17:42:56.768 [main]INFO  CustomUtils - Click on [Recurring payments] from User Menu
+17:42:56.895 [main]INFO  CustomUtils - Click on [Reward Points] from User Menu
+17:42:57.042 [main]INFO  CustomUtils - Click on [Returns] from User Menu
+17:42:57.186 [main]INFO  CustomUtils - Click on [Transactions] from User Menu
+17:42:57.311 [main]INFO  CustomUtils - Click on [Newsletter] from User Menu
+17:42:57.456 [main]INFO  CustomUtils - Click on [Logout] from User Menu
+17:42:57.580 [main]INFO  TestUtils - Test Paused : [2] Seconds

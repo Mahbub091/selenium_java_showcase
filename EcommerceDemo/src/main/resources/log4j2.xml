@@ -6,16 +6,17 @@
                     pattern="%d{HH:mm:ss.SSS} [%t]%-5level %logger{36} - %msg%n" />
         </Appender>
 
-        <Appender type="File" name="file" fileName="c:\temp\log\app.log">
+        <!-- Updated fileName to relative path -->
+        <Appender type="File" name="file" fileName="logs/app.log">
             <Layout type="PatternLayout"
                     pattern="%d{HH:mm:ss.SSS} [%t]%-5level %logger{36} - %msg%n" />
         </Appender>
     </Appenders>
 
-
     <Loggers>
         <Root level="all">
             <AppenderRef ref="STDOUT" />
+            <AppenderRef ref="file" />
         </Root>
     </Loggers>
 </Configuration>
